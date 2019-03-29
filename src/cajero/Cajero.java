@@ -21,19 +21,19 @@ public class Cajero extends javax.swing.JFrame {
     public Cajero() {
         initComponents();
         this.setSize(1000, 600);
+        this.setVisible(true);
         
         Font Consolas = new java.awt.Font("Consolas", 0, 24);
+        Scanner sc = new Scanner(System.in);
         
         //PIN
         jLabel1.setFont(Consolas);
         jLabel1.setText("ESCRIBA SU PIN:");
         
         jPasswordField1.setFont(Consolas);
-        jPasswordField1.setLocation(500, 300);
-        jPasswordField1.setSize(200, 40);
+        //jPasswordField1.setLocation(500, 300);
+        //jPasswordField1.setSize(200, 40);
         jPasswordField1.setEchoChar('*');
-        
-        Scanner sc = new Scanner(System.in);
         
         char[] pin = new char[4];
         boolean isCorrect = true;
@@ -111,7 +111,7 @@ public class Cajero extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cajero().setVisible(true);
+                new Cajero();
             }
         });
         
