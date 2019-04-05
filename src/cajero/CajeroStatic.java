@@ -14,7 +14,11 @@ public class CajeroStatic {
         Cuenta cuenta1= new Cuenta();
         cuenta1.setNombre("Alvaro Rio");
         cuenta1.setNumerocuenta(0);
-        cuenta1.setPin(1111);
+        char[] pin = new char[4];
+        for (int i = 0; i < 4; i++){
+            pin[i] = 1;
+        }
+        cuenta1.setPin(pin);
         cuenta1.setSaldo(600);
         cuenta1.setMovimientos("Movimientos:"+"\n");
         Contraseñas contraseña1 = new Contraseñas();
@@ -43,7 +47,7 @@ public class CajeroStatic {
         }
         if(numero==1){
         System.out.println("Su contraseña actual es: "+cuenta1.getPin());
-           int nueva = contraseña1.Cambio();
+           char[] nueva = new char[4];
            cuenta1.setPin(nueva);          
            //String frase = cuenta1.getMovimientos()+"Cambio de contraseña realizado";
            //cuenta1.setMovimientos(frase+"\n");

@@ -5,8 +5,8 @@
  */
 package cajero;
 
+import control.Controlador;
 import java.awt.Font;
-import java.util.Scanner;
 
 /**
  *
@@ -14,41 +14,49 @@ import java.util.Scanner;
  */
 public class Cajero extends javax.swing.JFrame {
 
+    private Controlador miControlador;
+    private Cuenta cuenta;
     /**
      * Creates new form asdñlfkj
      */
     public Cajero() {
+        
+        this.cuenta = new Cuenta();
+        this.miControlador = new Controlador(cuenta);
+        
+        MenuPrincipal m = new MenuPrincipal();
+        
         initComponents();
         this.setSize(1000, 600);
         this.setVisible(true);
         
         Font Consolas = new java.awt.Font("Consolas", 0, 24);
-        Scanner sc = new Scanner(System.in);
-        
+
         //PIN
         jLabel1.setFont(Consolas);
         jLabel1.setText("ESCRIBA SU PIN:");
+        jPasswordField1.addActionListener(this.miControlador);
+        
         
         jPasswordField1.setFont(Consolas);
-        //jPasswordField1.setLocation(500, 300);
-        //jPasswordField1.setSize(200, 40);
         jPasswordField1.setEchoChar('*');
         
         char[] pin = new char[4];
         boolean isCorrect = true;
-        
+         
         do{
             jPasswordField1.setText("");
-            for (int i = 0; i < 4; i++) pin[i] = sc.next().toCharArray()[0];
-            
-            if (pin[0] != '6') isCorrect = false;
-            if (pin[1] != '5') isCorrect = false;
-            if (pin[2] != '4') isCorrect = false;
-            if (pin[3] != '2') isCorrect = false;
-            
+            isCorrect = this.miControlador.validaPin(jPasswordField1.getPassword());
+
         }while (isCorrect);
         
-        
+        if (isCorrect){
+            this.jPanel2.setVisible(false);
+            this.jPanel3.setVisible(false);
+            this.jPanel4.setVisible(false);
+            m.setVisible(true);
+        }
+            
         //Mostrar menú principal
         /*MenuPrincipal mp = new MenuPrincipal();
         this.add(mp);*/
@@ -64,17 +72,30 @@ public class Cajero extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.FlowLayout());
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Mete el PIN"));
 
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
+        jPanel1.add(jLabel1);
 
-        jPasswordField1.setText("jPasswordField1");
-        getContentPane().add(jPasswordField1);
+        jPasswordField1.setToolTipText("");
+        jPasswordField1.setAutoscrolls(false);
+        jPasswordField1.setPreferredSize(new java.awt.Dimension(65, 40));
+        jPanel1.add(jPasswordField1);
+
+        jPanel2.add(jPanel1);
+
+        getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
+        getContentPane().add(jPanel4, java.awt.BorderLayout.PAGE_END);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,6 +139,10 @@ public class Cajero extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPasswordField jPasswordField1;
     // End of variables declaration//GEN-END:variables
 }

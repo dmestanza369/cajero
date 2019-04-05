@@ -5,7 +5,7 @@ package cajero;
 public class Cuenta {
     private int numerocuenta;
     private String nombre;
-    private int pin;
+    private char[] pin = new char[4];
     private int saldo;
     private String movimientos;
     
@@ -17,7 +17,7 @@ public class Cuenta {
         return nombre;
     }
 
-    public int getPin() {
+    public char[] getPin() {
         return pin;
     }
 
@@ -29,7 +29,7 @@ public class Cuenta {
         this.nombre = nombre;
     }
 
-    public void setPin(int pin) {
+    public void setPin(char[] pin) {
         this.pin = pin;
     }
 
@@ -54,6 +54,16 @@ public class Cuenta {
 
     public void setMovimientos(String movimientos) {
         this.movimientos = movimientos;
+    }
+    
+    public boolean validarPin(char[] pin){
+        boolean res = false;
+        
+        for (int i = 0; i < 4; i++)
+            if (pin[i] != this.pin[i]) res = false;
+            
+        return res;
+        
     }
     
 }
