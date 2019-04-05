@@ -4,7 +4,7 @@ package cajero;
 import java.util.Scanner;
 
 
-public class Cajero {
+public class CajeroStatic {
 
     public static final String rojo = "\u001B[31m";  
     public static String getStringInColor(String color, String txt){
