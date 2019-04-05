@@ -62,7 +62,7 @@ public class CajeroStatic {
         if(numero==4){
           int cantidad=pagos1.opciones();
           cuenta1.quitarDinero(cantidad);
-          String frasepago=Cajero.getStringInColor(Cajero.rojo,"Pago realizado -"+cantidad+"€"+"\n"); 
+          String frasepago=CajeroStatic.getStringInColor(CajeroStatic.rojo,"Pago realizado -"+cantidad+"€"+"\n"); 
           String extension2=cuenta1.getMovimientos()+frasepago;
           cuenta1.setMovimientos(extension2);
         }
@@ -84,7 +84,7 @@ public class CajeroStatic {
            int retirar=retirardinero1.hacer();
            cuenta1.setSaldo(cuenta1.getSaldo()-retirar);
            System.out.println("Saldo actual de la cuenta: "+cuenta1.getSaldo());
-           String frasepago1=Cajero.getStringInColor(Cajero.rojo,"Extracción de dinero realizada -"+retirar+"€"+"\n"); 
+           String frasepago1=CajeroStatic.getStringInColor(CajeroStatic.rojo,"Extracción de dinero realizada -"+retirar+"€"+"\n"); 
            String extension3=cuenta1.getMovimientos()+frasepago1;
            cuenta1.setMovimientos(extension3);
         }
@@ -92,7 +92,7 @@ public class CajeroStatic {
         if(numero==7){
             int dinerotrans=transacciones1.hacer();
             cuenta1.setSaldo(cuenta1.getSaldo()-dinerotrans);
-            String frasepago2=Cajero.getStringInColor(Cajero.rojo,"Transacción de dinero realizada -"+dinerotrans+"€"+"\n"); 
+            String frasepago2=CajeroStatic.getStringInColor(CajeroStatic.rojo,"Transacción de dinero realizada -"+dinerotrans+"€"+"\n"); 
             String extension4=cuenta1.getMovimientos()+frasepago2;
             cuenta1.setMovimientos(extension4);
         }
