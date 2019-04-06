@@ -6,7 +6,7 @@ public class Cuenta {
     private int numerocuenta;
     private String nombre;
     private char[] pin = new char[4];
-    private int saldo;
+    private double saldo;
     private String movimientos;
     
     public int getNumerocuenta() {
@@ -34,11 +34,11 @@ public class Cuenta {
     }
 
 
-    public int getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(int saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
     
