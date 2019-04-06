@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cajero;
+package GUIs;
 
-import control.Controlador;
+import Controllers.CajeroController;
 import java.awt.Font;
 
 /**
@@ -14,17 +14,17 @@ import java.awt.Font;
  */
 public class Cajero extends javax.swing.JFrame {
 
-    private Controlador miControlador;
+    private CajeroController miCajeroController;
     private Cuenta cuenta;
     /**
-     * Creates new form asdñlfkj
+     * Creates new form
      */
     public Cajero() {
         
         this.cuenta = new Cuenta();
-        this.miControlador = new Controlador(cuenta);
+        this.miCajeroController = new CajeroController(cuenta);
         
-        MenuPrincipal m = new MenuPrincipal();
+        MenuPrincipal menu = new MenuPrincipal();
         
         initComponents();
         this.setSize(1000, 600);
@@ -35,7 +35,7 @@ public class Cajero extends javax.swing.JFrame {
         //PIN
         jLabel1.setFont(Consolas);
         jLabel1.setText("ESCRIBA SU PIN:");
-        jPasswordField1.addActionListener(this.miControlador);
+        jPasswordField1.addActionListener(this.miCajeroController);
         
         
         jPasswordField1.setFont(Consolas);
@@ -46,7 +46,7 @@ public class Cajero extends javax.swing.JFrame {
          
         do{
             jPasswordField1.setText("");
-            isCorrect = this.miControlador.validaPin(jPasswordField1.getPassword());
+            isCorrect = this.miCajeroController.validaPin(jPasswordField1.getPassword());
 
         }while (isCorrect);
         
@@ -54,7 +54,7 @@ public class Cajero extends javax.swing.JFrame {
             this.jPanel2.setVisible(false);
             this.jPanel3.setVisible(false);
             this.jPanel4.setVisible(false);
-            m.setVisible(true);
+            menu.setVisible(true);
         }
             
         //Mostrar menú principal
