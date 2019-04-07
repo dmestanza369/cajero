@@ -33,8 +33,8 @@ public class SacarDinero extends javax.swing.JPanel {
         jTextField1.setFont(Consolas12);
         jTextField1.setText("");
         
-        jToggleButton1.setFont(Consolas12);
-        jToggleButton1.setText("Sacar dinero");
+        jButton1.setFont(Consolas12);
+        jButton1.setText("Sacar dinero");
     }
 
     /**
@@ -52,7 +52,7 @@ public class SacarDinero extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        jButton1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
 
         setLayout(new java.awt.BorderLayout());
@@ -70,13 +70,13 @@ public class SacarDinero extends javax.swing.JPanel {
 
         jPanel3.add(jPanel6, java.awt.BorderLayout.CENTER);
 
-        jToggleButton1.setText("jToggleButton1");
-        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton1.setText("jButton1");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jToggleButton1MouseClicked(evt);
+                jButton1MouseClicked(evt);
             }
         });
-        jPanel8.add(jToggleButton1);
+        jPanel8.add(jButton1);
 
         jPanel3.add(jPanel8, java.awt.BorderLayout.PAGE_END);
 
@@ -96,13 +96,13 @@ public class SacarDinero extends javax.swing.JPanel {
         add(jPanel5, java.awt.BorderLayout.PAGE_END);
     }// </editor-fold>//GEN-END:initComponents
 
-    //Es necesario un controlador teniendo un MouseListener por el botón?
-    private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         this.controller.sacarDinero(Double.parseDouble(jTextField1.getText()));
-    }//GEN-LAST:event_jToggleButton1MouseClicked
+    }//GEN-LAST:event_jButton1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -110,6 +110,5 @@ public class SacarDinero extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
