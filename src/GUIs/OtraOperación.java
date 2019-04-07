@@ -20,6 +20,7 @@ public class OtraOperación extends javax.swing.JPanel {
         initComponents();
         this.setSize(1000, 600);
         
+        //Fuentes
         Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
         Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
         
@@ -128,11 +129,15 @@ public class OtraOperación extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
+        //Sí
+        
+        //Volver a MenuPrincipal
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        // TODO add your handling code here:
+        //No
+        
+        //Exit
     }//GEN-LAST:event_jButton2MouseClicked
 
 

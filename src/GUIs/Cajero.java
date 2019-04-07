@@ -26,12 +26,13 @@ public class Cajero extends javax.swing.JFrame {
         
         this.setTitle("Cajero"); //Título de la ventana
         
-        MenuPrincipal menu = new MenuPrincipal();
+        MenuPrincipal menuprincipal = new MenuPrincipal();
         
         initComponents();
         this.setSize(1000, 600);
         this.setVisible(true);
         
+        //Fuentes
         Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
         Font Consolas24 = new java.awt.Font("Consolas", 0, 24);
         
@@ -58,7 +59,7 @@ public class Cajero extends javax.swing.JFrame {
             this.jPanel2.setVisible(false);
             this.jPanel3.setVisible(false);
             this.jPanel4.setVisible(false);
-            menu.setVisible(true);
+            menuprincipal.setVisible(true);
         }
     }
 

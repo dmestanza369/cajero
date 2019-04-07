@@ -5,7 +5,7 @@
  */
 package GUIs;
 
-import Controllers.SacarDineroController;
+//import Controllers.SacarDineroController;
 import java.awt.Font;
 
 /**
@@ -14,7 +14,7 @@ import java.awt.Font;
  */
 public class SacarDinero extends javax.swing.JPanel {
 
-    private SacarDineroController controller;
+    //private SacarDineroController controller;
     private Cuenta cuenta;
     
     public SacarDinero() {
@@ -22,8 +22,9 @@ public class SacarDinero extends javax.swing.JPanel {
         this.setSize(1000, 600);
         
         this.cuenta = new Cuenta();
-        this.controller = new SacarDineroController(cuenta);
+        //this.controller = new SacarDineroController(cuenta);
         
+        //Fuentes
         Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
         Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
         
@@ -95,9 +96,13 @@ public class SacarDinero extends javax.swing.JPanel {
 
         add(jPanel5, java.awt.BorderLayout.PAGE_END);
     }// </editor-fold>//GEN-END:initComponents
-
+    // Es necesario un SacarDineroController?
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        this.controller.sacarDinero(Double.parseDouble(jTextField1.getText()));
+        //this.controller.sacarDinero(Double.parseDouble(jTextField1.getText()));
+        double sacar = Double.parseDouble(jTextField1.getText());
+        if (sacar <= cuenta.getSaldo())
+            cuenta.setSaldo(cuenta.getSaldo() - sacar);
+        else throw new UnsupportedOperationException("Not supported yet.");
     }//GEN-LAST:event_jButton1MouseClicked
 
 
