@@ -58,10 +58,16 @@ public class Cajero extends javax.swing.JFrame {
         }while (isCorrect);
         
         if (isCorrect){ //Muestra el menú principal
-            this.jPanel2.setVisible(false);
-            this.jPanel3.setVisible(false);
-            this.jPanel4.setVisible(false);
-            menuprincipal.setVisible(true);
+            boolean isOtraOperacion = false;
+            do{
+                this.jPanel2.setVisible(false);
+                this.jPanel3.setVisible(false);
+                this.jPanel4.setVisible(false);
+                menuprincipal.setVisible(true);
+                
+                
+                isOtraOperacion = otraoperacion.getOtraOperacion();
+            }while(!isOtraOperacion);
         }
     }
 
@@ -139,6 +145,7 @@ public class Cajero extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Cajero();
+                run();
             }
         });
         

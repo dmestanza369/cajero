@@ -13,6 +13,8 @@ import java.awt.Font;
  */
 public class OtraOperación extends javax.swing.JPanel {
 
+    private boolean isOtraOperacion;
+
     /**
      * Creates new form OtraAcción
      */
@@ -32,6 +34,18 @@ public class OtraOperación extends javax.swing.JPanel {
         
         jButton2.setFont(Consolas12);
         jButton2.setText("No");
+    }
+    
+    public boolean getOtraOperacion(){
+        return isOtraOperacion;
+    }
+    
+    public void trueOO(){
+        this.isOtraOperacion = true;
+    }
+    
+    public void false00(){
+        this.isOtraOperacion = false;
     }
 
     /**
@@ -130,14 +144,12 @@ public class OtraOperación extends javax.swing.JPanel {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         //Sí
-        
-        //Volver a MenuPrincipal
+        this.trueOO();
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         //No
-        
-        //Exit
+        this.false00();
     }//GEN-LAST:event_jButton2MouseClicked
 
 
