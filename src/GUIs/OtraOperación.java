@@ -61,6 +61,7 @@ public class OtraOperación extends javax.swing.JPanel {
         jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
@@ -103,7 +104,7 @@ public class OtraOperación extends javax.swing.JPanel {
                 jButton1MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton1);
+        jPanel6.add(jButton1);
 
         jButton2.setText("jButton2");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -111,7 +112,9 @@ public class OtraOperación extends javax.swing.JPanel {
                 jButton2MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton2);
+        jPanel6.add(jButton2);
+
+        jPanel1.add(jPanel6);
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -152,7 +155,6 @@ public class OtraOperación extends javax.swing.JPanel {
         this.false00();
     }//GEN-LAST:event_jButton2MouseClicked
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -162,5 +164,6 @@ public class OtraOperación extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 }
