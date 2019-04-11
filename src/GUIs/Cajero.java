@@ -59,11 +59,19 @@ public class Cajero extends javax.swing.JFrame {
         
         if (isCorrect){ //Muestra el menú principal
             boolean isOtraOperacion = false;
+            int eleccion = -1;
             do{
                 this.jPanel2.setVisible(false);
                 this.jPanel3.setVisible(false);
                 this.jPanel4.setVisible(false);
                 menuprincipal.setVisible(true);
+                
+                //
+                switch(eleccion){
+                    case 1:
+                        //
+                        break;
+                }
                 
                 
                 isOtraOperacion = otraoperacion.getOtraOperacion();
