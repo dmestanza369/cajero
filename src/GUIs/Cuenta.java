@@ -1,14 +1,16 @@
 
 package GUIs;
 
+import java.util.Stack;
+
 
 public class Cuenta {
     private int numerocuenta;
     private String nombre;
     private char[] pin = new char[4];
     private double saldo;
-    private String movimientos;
-    
+    private Stack<Movimiento> movimientos = new Stack<>();
+   
     public int getNumerocuenta() {
         return numerocuenta;
     }
@@ -49,11 +51,15 @@ public class Cuenta {
     }
 
     public String getMovimientos() {
-        return movimientos;
+        String mov = "";
+        for (int i = 0; i < movimientos.size(); i++)
+            mov += movimientos.get(i).getMovimiento() + "/n";
+        return mov;
     }
 
-    public void setMovimientos(String movimientos) {
-        this.movimientos = movimientos;
+    public void setMovimientos(int cant, String conc) {
+        Movimiento mov = new Movimiento(cant, conc);
+        this.movimientos.add(mov);
     }
     
     public boolean validarPin(char[] pin){
