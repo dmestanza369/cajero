@@ -27,6 +27,8 @@ public class Cajero extends javax.swing.JFrame {
         this.setTitle("Cajero"); //Título de la ventana
         
         MenuPrincipal menuprincipal = new MenuPrincipal();
+        OtraOperación otraoperacion = new OtraOperación();
+        SacarDinero sacardinero = new SacarDinero();
         
         initComponents();
         this.setSize(1000, 600);
