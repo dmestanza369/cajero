@@ -3,11 +3,10 @@ package GUIs;
 
 import java.util.Stack;
 
-
 public class Cuenta {
     private int numerocuenta;
     private String nombre;
-    private char[] pin = new char[4];
+    private int pin;
     private double saldo;
     private Stack<Movimiento> movimientos = new Stack<>();
    
@@ -19,7 +18,7 @@ public class Cuenta {
         return nombre;
     }
 
-    public char[] getPin() {
+    public int getPin() {
         return pin;
     }
 
@@ -31,7 +30,7 @@ public class Cuenta {
         this.nombre = nombre;
     }
 
-    public void setPin(char[] pin) {
+    public void setPin(int pin) {
         this.pin = pin;
     }
 
@@ -60,16 +59,5 @@ public class Cuenta {
     public void setMovimientos(int cant, String conc) {
         Movimiento mov = new Movimiento(cant, conc);
         this.movimientos.add(mov);
-    }
-    
-    public boolean validarPin(char[] pin){
-        boolean res = false;
-        
-        for (int i = 0; i < 4; i++)
-            if (pin[i] != this.pin[i]) res = false;
-            
-        return res;
-        
-    }
-    
+    }   
 }

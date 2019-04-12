@@ -7,6 +7,7 @@ package GUIs;
 
 import Controllers.CajeroController;
 import java.awt.Font;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,12 +17,12 @@ public class Cajero extends javax.swing.JFrame {
 
     private CajeroController controller;
     private Cuenta cuenta;
+    
     /**
      * Creates new form
      */
     public Cajero() {
         
-        this.cuenta = new Cuenta();
         this.controller = new CajeroController(cuenta);
         
         this.setTitle("Cajero"); //Título de la ventana
@@ -49,13 +50,17 @@ public class Cajero extends javax.swing.JFrame {
         jPasswordField1.setFont(Consolas24);
         jPasswordField1.setEchoChar('*');
         
-        char[] pin = new char[4];
+        int pin = 0;
         boolean isCorrect = true;
-         
-        do{ //Comprueba el pin: si falla, tendrá que repetirlo.
-            jPasswordField1.setText("");
-            isCorrect = this.controller.validaPin(jPasswordField1.getPassword());
-        }while (isCorrect);
+        
+        //Pasar el PIN de char[] a string.
+        String contraseña = "";
+        for (int i = 0; i < jPasswordField1.getPassword().length; i++)
+            contraseña += jPasswordField1.getPassword()[i];
+
+        jPasswordField1.setText("");
+        cuenta = this.controller.validaPin(Integer.parseInt(contraseña));
+        if (cuenta == null) isCorrect = false;
         
         if (isCorrect){ //Muestra el menú principal
             boolean isOtraOperacion = false;
@@ -64,6 +69,7 @@ public class Cajero extends javax.swing.JFrame {
                 this.jPanel2.setVisible(false);
                 this.jPanel3.setVisible(false);
                 this.jPanel4.setVisible(false);
+                this.add(menuprincipal);
                 menuprincipal.setVisible(true);
                 
                 //
@@ -76,6 +82,8 @@ public class Cajero extends javax.swing.JFrame {
                 
                 isOtraOperacion = otraoperacion.getOtraOperacion();
             }while(!isOtraOperacion);
+        } else {
+            JOptionPane.showMessageDialog(this, "ERROR");
         }
     }
 
@@ -153,10 +161,8 @@ public class Cajero extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Cajero();
-                run();
             }
-        });
-        
+        });  
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

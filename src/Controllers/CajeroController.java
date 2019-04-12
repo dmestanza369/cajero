@@ -8,6 +8,7 @@ package Controllers;
 import GUIs.Cuenta;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import Database.Database;
 
 /**
  *
@@ -16,6 +17,7 @@ import java.awt.event.ActionListener;
 public class CajeroController implements ActionListener{
     
     private Cuenta cuenta;
+    private Database DB;
 
     public CajeroController(Cuenta cuenta) {
         this.cuenta = cuenta;
@@ -29,8 +31,8 @@ public class CajeroController implements ActionListener{
         this.cuenta = cuenta;
     }
     
-    public boolean validaPin(char[] password) {
-        return cuenta.validarPin(password);       
+    public Cuenta validaPin(int password) {
+        return DB.buscarCuenta(password);       
     }
     
     @Override
