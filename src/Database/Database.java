@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Database {
     ArrayList<Cuenta> DATABASE = new ArrayList<>();
     
-    private void insertarCuentas() {
+    public void insertarCuentas() {
         Cuenta cuenta1 = new Cuenta();
         cuenta1.setNumerocuenta(00000001);
         cuenta1.setNombre("Álvaro Río López");

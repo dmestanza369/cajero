@@ -21,17 +21,11 @@ public class CajeroController implements ActionListener{
 
     public CajeroController(Cuenta cuenta) {
         this.cuenta = cuenta;
-    }
-
-    public Cuenta getCuenta() {
-        return cuenta;
-    }
-
-    public void setCuenta(Cuenta cuenta) {
-        this.cuenta = cuenta;
+        DB.insertarCuentas();
     }
     
     public Cuenta validaPin(int password) {
+
         return DB.buscarCuenta(password);       
     }
     

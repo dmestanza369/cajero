@@ -1,7 +1,5 @@
 
-package GUIs;
-
-import Scripts.*;
+package Scripts;
 
 import java.util.Scanner;
 
@@ -12,17 +10,15 @@ public class CajeroStatic {
     public static String getStringInColor(String color, String txt){
         return color+txt;
     }
-    public static void main(String[] args) {
+    public void main(String[] args) {
         Cuenta cuenta1= new Cuenta();
         cuenta1.setNombre("Alvaro Rio");
         cuenta1.setNumerocuenta(0);
-        char[] pin = new char[4];
-        for (int i = 0; i < 4; i++){
-            pin[i] = 1;
-        }
+        int pin = 0;
+
         cuenta1.setPin(pin);
         cuenta1.setSaldo(600);
-        cuenta1.setMovimientos("Movimientos:"+"\n");
+        //cuenta1.setMovimientos("Movimientos:"+"\n");
         Contraseñas contraseña1 = new Contraseñas();
         IngresarDinero ingresardinero1 = new IngresarDinero();
         Pagos pagos1 = new Pagos();
@@ -49,7 +45,7 @@ public class CajeroStatic {
         }
         if(numero==1){
         System.out.println("Su contraseña actual es: "+cuenta1.getPin());
-           char[] nueva = new char[4];
+           int nueva = 0;
            cuenta1.setPin(nueva);          
            //String frase = cuenta1.getMovimientos()+"Cambio de contraseña realizado";
            //cuenta1.setMovimientos(frase+"\n");
@@ -60,7 +56,7 @@ public class CajeroStatic {
             cuenta1.setSaldo(cuenta1.getSaldo()+dinero);
             System.out.println("Saldo despues del ingreso: "+cuenta1.getSaldo());
             String extension = cuenta1.getMovimientos()+"Ingreso de dinero realizado +"+dinero+"€"+"\n";
-            cuenta1.setMovimientos(extension);
+           // cuenta1.setMovimientos(extension);
         }
         if(numero==3){
             System.out.println(cuenta1.getMovimientos());
@@ -70,7 +66,7 @@ public class CajeroStatic {
           cuenta1.quitarDinero(cantidad);
           String frasepago=CajeroStatic.getStringInColor(CajeroStatic.rojo,"Pago realizado -"+cantidad+"€"+"\n"); 
           String extension2=cuenta1.getMovimientos()+frasepago;
-          cuenta1.setMovimientos(extension2);
+          //cuenta1.setMovimientos(extension2);
         }
         if(numero==5){
             String telefono = recargartelefono1.pedirnumero();
@@ -92,7 +88,7 @@ public class CajeroStatic {
            System.out.println("Saldo actual de la cuenta: "+cuenta1.getSaldo());
            String frasepago1=CajeroStatic.getStringInColor(CajeroStatic.rojo,"Extracción de dinero realizada -"+retirar+"€"+"\n"); 
            String extension3=cuenta1.getMovimientos()+frasepago1;
-           cuenta1.setMovimientos(extension3);
+           //cuenta1.setMovimientos(extension3);
         }
        
         if(numero==7){
@@ -100,7 +96,7 @@ public class CajeroStatic {
             cuenta1.setSaldo(cuenta1.getSaldo()-dinerotrans);
             String frasepago2=CajeroStatic.getStringInColor(CajeroStatic.rojo,"Transacción de dinero realizada -"+dinerotrans+"€"+"\n"); 
             String extension4=cuenta1.getMovimientos()+frasepago2;
-            cuenta1.setMovimientos(extension4);
+            //cuenta1.setMovimientos(extension4);
         }
         if(numero==8){
             

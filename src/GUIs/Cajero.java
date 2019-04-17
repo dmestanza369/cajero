@@ -32,6 +32,10 @@ public class Cajero extends javax.swing.JFrame {
         MenuPrincipal menuprincipal = new MenuPrincipal();
         OtraOperación otraoperacion = new OtraOperación();
         SacarDinero sacardinero = new SacarDinero();
+
+        this.getContentPane().add(menuprincipal);
+        this.getContentPane().add(otraoperacion);
+        this.getContentPane().add(sacardinero);
         
         initComponents();
         this.setSize(1000, 600);
@@ -65,16 +69,14 @@ public class Cajero extends javax.swing.JFrame {
         if (cuenta == null) isCorrect = false;
         
         if (isCorrect){ //Muestra el menú principal
-            boolean isOtraOperacion = false;
+            boolean isOtraOperacion;
             int eleccion = -1;
             do{
                 this.jPanel2.setVisible(false);
                 this.jPanel3.setVisible(false);
                 this.jPanel4.setVisible(false);
-                this.add(menuprincipal);
                 menuprincipal.setVisible(true);
-                
-                //
+
                 switch(eleccion){
                     case 1:
                         //
