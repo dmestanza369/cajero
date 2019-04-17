@@ -1,6 +1,8 @@
 
 package GUIs;
 
+import Scripts.*;
+
 import java.util.Scanner;
 
 

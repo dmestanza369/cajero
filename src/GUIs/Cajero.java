@@ -6,6 +6,8 @@
 package GUIs;
 
 import Controllers.CajeroController;
+import Scripts.Cuenta;
+
 import java.awt.Font;
 import javax.swing.JOptionPane;
 

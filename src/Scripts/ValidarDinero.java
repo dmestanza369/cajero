@@ -1,5 +1,5 @@
 
-package GUIs;
+package Scripts;
 
 public class ValidarDinero {
     

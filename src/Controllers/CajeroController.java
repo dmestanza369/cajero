@@ -5,7 +5,7 @@
  */
 package Controllers;
 
-import GUIs.Cuenta;
+import Scripts.Cuenta;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Database.Database;

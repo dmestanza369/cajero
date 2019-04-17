@@ -5,7 +5,7 @@
  */
 package Database;
 
-import GUIs.Cuenta;
+import Scripts.Cuenta;
 import java.util.ArrayList;
 
 /**

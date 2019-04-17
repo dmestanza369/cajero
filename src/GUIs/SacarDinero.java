@@ -6,6 +6,8 @@
 package GUIs;
 
 //import Controllers.SacarDineroController;
+import Scripts.Cuenta;
+
 import java.awt.Font;
 
 /**
