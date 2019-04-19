@@ -143,7 +143,7 @@ public class OtraOperación extends javax.swing.JPanel {
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         //No
         this.setVisible(false);
-        cajero.elegirSubmenu(7);
+        cajero.elegirSubmenu(8);
     }//GEN-LAST:event_jButton2MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

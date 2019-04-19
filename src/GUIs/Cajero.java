@@ -25,6 +25,7 @@ public class Cajero extends javax.swing.JFrame {
     MenuPrincipal menuprincipal;
     OtraOperación otraoperacion;
     SacarDinero sacardinero;
+    IngresarDinero ingresarDinero;
     
     public Cajero() {
         this.controller = new CajeroController();
@@ -116,33 +117,37 @@ public class Cajero extends javax.swing.JFrame {
         }
         numerocuentaactiva = this.controller.validaPin(PIN);
         setCuentas();
+        jPasswordField1.setText("");
         
         if (numerocuentaactiva != -1){
                 this.jPanel2.setVisible(false);
                 this.jPanel3.setVisible(false);
                 this.jPanel4.setVisible(false);
                 menuprincipal.setVisible(true);
-        } else JOptionPane.showMessageDialog(this, "ERROR: Not a Number");
+        } else JOptionPane.showMessageDialog(this, "ERROR: PIN inexistente o no es un número");
     }//GEN-LAST:event_jButton1MousePressed
 
     private void setCuentas() {
         this.menuprincipal = new MenuPrincipal(this);
         this.otraoperacion = new OtraOperación(this);
         this.sacardinero = new SacarDinero(this, numerocuentaactiva);
+        this.ingresarDinero = new IngresarDinero(this,numerocuentaactiva);
         
         this.getContentPane().add(menuprincipal);
         this.getContentPane().add(otraoperacion);
         this.getContentPane().add(sacardinero);
+        this.getContentPane().add(ingresarDinero);
         
         menuprincipal.setVisible(false);
         otraoperacion.setVisible(false);
         sacardinero.setVisible(false);
+        ingresarDinero.setVisible(false);
     }
     
     public void elegirSubmenu(int eleccion){
         switch(eleccion){
             case 1:
-                //
+                ingresarDinero.setVisible(true);
                 break;
             case 2:
                 sacardinero.setVisible(true);
@@ -160,6 +165,9 @@ public class Cajero extends javax.swing.JFrame {
                 //
                 break;
             case 7:
+                //
+                break;
+            case 8:
                 this.jPanel2.setVisible(true);
                 this.jPanel3.setVisible(true);
                 this.jPanel4.setVisible(true);
@@ -171,6 +179,14 @@ public class Cajero extends javax.swing.JFrame {
         this.menuprincipal.setVisible(true);
     }
     
+    public void activarOtraOperacion(){
+        this.otraoperacion.setVisible(true);
+        
+    }
+    
+    public CajeroController getController() {
+        return controller;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

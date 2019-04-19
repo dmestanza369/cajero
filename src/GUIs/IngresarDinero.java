@@ -6,33 +6,31 @@
 package GUIs;
 
 import Database.CajeroController;
-import Scripts.Cuenta;
-
 import java.awt.Font;
-import javax.swing.JOptionPane;
 
 /**
  *
- * @author david
+ * @author kikem
  */
-public class SacarDinero extends javax.swing.JPanel {
+public class IngresarDinero extends javax.swing.JPanel {
 
     private int numeroCuenta;
     private Cajero cajero;
     private CajeroController controller;
     
-    public SacarDinero(Cajero cajero, int cuenta) {
+    public IngresarDinero(Cajero cajero, int cuenta) {
         initComponents();
         this.setSize(1000, 600);
         this.cajero = cajero;
         this.numeroCuenta = cuenta;
         this.controller = cajero.getController();
+        
         //Fuentes
         Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
         Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
         
         jLabel1.setFont(Consolas16);
-        jLabel1.setText("Sacar dinero");
+        jLabel1.setText("Ingresar dinero");
         
         jButton1.setFont(Consolas12);
         jButton1.setText("Aceptar");
@@ -40,6 +38,8 @@ public class SacarDinero extends javax.swing.JPanel {
         jTextField1.setFont(Consolas12);
         jTextField1.setText("");
     }
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,21 +50,29 @@ public class SacarDinero extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setText("jLabel1");
-        jPanel2.add(jLabel1);
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
-        add(jPanel2, java.awt.BorderLayout.PAGE_START);
+        add(jPanel5, java.awt.BorderLayout.PAGE_END);
 
         jPanel3.setLayout(new java.awt.BorderLayout());
 
@@ -81,6 +89,9 @@ public class SacarDinero extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
         });
         jPanel8.add(jButton1);
 
@@ -88,39 +99,28 @@ public class SacarDinero extends javax.swing.JPanel {
 
         add(jPanel3, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        jLabel1.setText("jLabel1");
+        jPanel2.add(jLabel1);
 
-        add(jPanel5, java.awt.BorderLayout.PAGE_END);
+        add(jPanel2, java.awt.BorderLayout.PAGE_START);
     }// </editor-fold>//GEN-END:initComponents
+
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        double sacar = -1;
+        double ingresar = -1;
         if(jTextField1.getText() != "")
-            sacar = Double.parseDouble(jTextField1.getText()); //CAMBIAR LA COMPROBACIÓN PARA CUANDO ESTÁ VACIO (TAMBIÉN EN INGRESAR DINERO)
-        if(sacar >= 0 ){
-            sacar = -sacar; //
-        int OK = 0;
-        if (-sacar <= controller.getSaldo(numeroCuenta)){
-            OK = this.controller.moverSaldo(numeroCuenta, sacar,"Retirada en efectivo");//el this puede que sobre
-            System.out.println(this.controller.getSaldo(numeroCuenta));
-            if (OK == -1) JOptionPane.showMessageDialog(this, "ERROR");
-            else{
-                this.setVisible(false);
-                this.cajero.activarOtraOperacion();
-            }
-        }
-        else JOptionPane.showMessageDialog(this, "ERROR: Saldo insuficiente");
-        jTextField1.setText("");
+            ingresar = Double.parseDouble(jTextField1.getText());
+        if(ingresar >= 0 ){
+            this.controller.moverSaldo(numeroCuenta, ingresar,"Ingreso");
+            //System.out.println(this.controller.getSaldo(numeroCuenta));
+            this.setVisible(false);
+            this.cajero.activarOtraOperacion();
+            jTextField1.setText("");
         }
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        // BORRAR XXXXXXXXXXXXXXXX
+    }//GEN-LAST:event_jButton1MousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

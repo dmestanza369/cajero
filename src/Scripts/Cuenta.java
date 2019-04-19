@@ -56,7 +56,7 @@ public class Cuenta {
         return mov;
     }
 
-    public void setMovimientos(int cant, String conc) {
+    public void setMovimientos(double cant, String conc) {
         Movimiento mov = new Movimiento(cant, conc);
         this.movimientos.add(mov);
     }   

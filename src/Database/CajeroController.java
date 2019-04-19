@@ -20,8 +20,8 @@ public class CajeroController{
         return DB.buscarCuentaPIN(PIN);
     }
     
-    public int restaSaldo(int numerocuenta, double saldo){
-        return DB.restaSaldo(numerocuenta, saldo);
+    public int moverSaldo(int numerocuenta, double saldo,String concepto){
+        return DB.moverSaldo(numerocuenta, saldo,concepto);
     }
     
     public double getSaldo(int numerocuenta){

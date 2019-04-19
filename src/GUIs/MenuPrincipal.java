@@ -105,6 +105,11 @@ public class MenuPrincipal extends javax.swing.JPanel{
         jPanel6.add(jPanel8);
 
         jButton1.setText("1");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
         jPanel15.add(jButton1);
 
         jPanel6.add(jPanel15);
@@ -221,6 +226,16 @@ public class MenuPrincipal extends javax.swing.JPanel{
         jPanel36.setLayout(new java.awt.GridLayout(1, 0));
 
         jButton8.setText("8");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton8MousePressed(evt);
+            }
+        });
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         jPanel37.add(jButton8);
 
         jPanel36.add(jPanel37);
@@ -241,6 +256,22 @@ public class MenuPrincipal extends javax.swing.JPanel{
         boton = 2;
         cajero.elegirSubmenu(boton);
     }//GEN-LAST:event_jButton2MousePressed
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        this.setVisible(false);
+        boton = 1;
+        cajero.elegirSubmenu(boton);
+    }//GEN-LAST:event_jButton1MousePressed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        //Borrar este evento
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MousePressed
+        this.setVisible(false);
+        boton = 8;
+        cajero.elegirSubmenu(boton);
+    }//GEN-LAST:event_jButton8MousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
