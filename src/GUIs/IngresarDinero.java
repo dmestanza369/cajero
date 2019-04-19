@@ -89,9 +89,6 @@ public class IngresarDinero extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
             }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jButton1MousePressed(evt);
-            }
         });
         jPanel8.add(jButton1);
 
@@ -117,10 +114,6 @@ public class IngresarDinero extends javax.swing.JPanel {
             jTextField1.setText("");
         }
     }//GEN-LAST:event_jButton1MouseClicked
-
-    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
-        // BORRAR XXXXXXXXXXXXXXXX
-    }//GEN-LAST:event_jButton1MousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

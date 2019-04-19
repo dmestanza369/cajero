@@ -231,11 +231,6 @@ public class MenuPrincipal extends javax.swing.JPanel{
                 jButton8MousePressed(evt);
             }
         });
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
         jPanel37.add(jButton8);
 
         jPanel36.add(jPanel37);
@@ -262,10 +257,6 @@ public class MenuPrincipal extends javax.swing.JPanel{
         boton = 1;
         cajero.elegirSubmenu(boton);
     }//GEN-LAST:event_jButton1MousePressed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        //Borrar este evento
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MousePressed
         this.setVisible(false);
