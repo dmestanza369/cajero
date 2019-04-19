@@ -5,10 +5,11 @@
  */
 package GUIs;
 
-//import Controllers.SacarDineroController;
+import Database.CajeroController;
 import Scripts.Cuenta;
 
 import java.awt.Font;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,14 +18,15 @@ import java.awt.Font;
 public class SacarDinero extends javax.swing.JPanel {
 
     //private SacarDineroController controller;
-    private Cuenta cuenta;
+    private int cuenta;
+    private Cajero cajero;
+    private CajeroController controller;
     
-    public SacarDinero() {
+    public SacarDinero(Cajero cajero, int cuenta) {
         initComponents();
         this.setSize(1000, 600);
-        
-        this.cuenta = new Cuenta();
-        //this.controller = new SacarDineroController(cuenta);
+        this.cajero = cajero;
+        this.cuenta = cuenta;
         
         //Fuentes
         Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
@@ -33,11 +35,11 @@ public class SacarDinero extends javax.swing.JPanel {
         jLabel1.setFont(Consolas16);
         jLabel1.setText("Sacar dinero");
         
-        jTextField1.setFont(Consolas12);
-        jTextField1.setText("");
-        
         jButton1.setFont(Consolas12);
         jButton1.setText("Sacar dinero");
+        
+        jTextField1.setFont(Consolas12);
+        jTextField1.setText("");
     }
 
     /**
@@ -69,6 +71,8 @@ public class SacarDinero extends javax.swing.JPanel {
 
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("jTextField1");
+        jTextField1.setMinimumSize(new java.awt.Dimension(100, 24));
+        jTextField1.setPreferredSize(new java.awt.Dimension(100, 24));
         jPanel6.add(jTextField1);
 
         jPanel3.add(jPanel6, java.awt.BorderLayout.CENTER);
@@ -98,13 +102,14 @@ public class SacarDinero extends javax.swing.JPanel {
 
         add(jPanel5, java.awt.BorderLayout.PAGE_END);
     }// </editor-fold>//GEN-END:initComponents
-    // Es necesario un SacarDineroController?
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        //this.controller.sacarDinero(Double.parseDouble(jTextField1.getText()));
         double sacar = Double.parseDouble(jTextField1.getText());
-        if (sacar <= cuenta.getSaldo())
-            cuenta.setSaldo(cuenta.getSaldo() - sacar);
-        else throw new UnsupportedOperationException("Not supported yet.");
+        int OK = 0;
+        if (sacar <= controller.getSaldo(cuenta))
+            OK = this.controller.restaSaldo(cuenta, sacar);
+            if (OK == -1) JOptionPane.showMessageDialog(this, "ERROR");
+        else JOptionPane.showMessageDialog(this, "ERROR: Saldo insuficiente");
+        System.out.println(controller.getSaldo(cuenta));
     }//GEN-LAST:event_jButton1MouseClicked
 
 

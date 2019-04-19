@@ -9,7 +9,7 @@ public class Cuenta {
     private int pin;
     private double saldo;
     private Stack<Movimiento> movimientos = new Stack<>();
-   
+    
     public int getNumerocuenta() {
         return numerocuenta;
     }

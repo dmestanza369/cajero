@@ -13,14 +13,15 @@ import java.awt.Font;
  */
 public class OtraOperación extends javax.swing.JPanel {
 
-    private boolean isOtraOperacion;
+    Cajero cajero;
 
     /**
      * Creates new form OtraAcción
      */
-    public OtraOperación() {
+    public OtraOperación(Cajero cajero) {
         initComponents();
         this.setSize(1000, 600);
+        this.cajero = cajero;
         
         //Fuentes
         Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
@@ -34,18 +35,6 @@ public class OtraOperación extends javax.swing.JPanel {
         
         jButton2.setFont(Consolas12);
         jButton2.setText("No");
-    }
-    
-    public boolean getOtraOperacion(){
-        return isOtraOperacion;
-    }
-    
-    public void trueOO(){
-        this.isOtraOperacion = true;
-    }
-    
-    public void false00(){
-        this.isOtraOperacion = false;
     }
 
     /**
@@ -147,12 +136,14 @@ public class OtraOperación extends javax.swing.JPanel {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         //Sí
-        this.trueOO();
+        this.setVisible(false);
+        cajero.activarMenuPrincipal();
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         //No
-        this.false00();
+        this.setVisible(false);
+        cajero.elegirSubmenu(7);
     }//GEN-LAST:event_jButton2MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

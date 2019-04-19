@@ -5,18 +5,28 @@
  */
 package GUIs;
 
+import Scripts.Cuenta;
+import java.awt.Font;
+
 /**
  *
  * @author d.mestanza.2017
  */
-public class MenuPrincipal extends javax.swing.JPanel {
-
+public class MenuPrincipal extends javax.swing.JPanel{
+    Cajero cajero;
+    int boton = 0;
     /**
      * Creates new form MenuPrincipal
      */
-    public MenuPrincipal() {
+    public MenuPrincipal(Cajero cajero) {
         initComponents();
         this.setSize(1000, 600);
+        this.cajero = cajero;
+        
+        //Fuentes
+        Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
+        
+        jLabel9.setFont(Consolas16);
     }
 
     /**
@@ -38,7 +48,7 @@ public class MenuPrincipal extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
-        jButton10 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel17 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
@@ -46,10 +56,10 @@ public class MenuPrincipal extends javax.swing.JPanel {
         jPanel20 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
-        jButton9 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel22 = new javax.swing.JPanel();
         jPanel23 = new javax.swing.JPanel();
-        jButton11 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jPanel24 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
@@ -57,10 +67,10 @@ public class MenuPrincipal extends javax.swing.JPanel {
         jPanel27 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
-        jButton12 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jPanel29 = new javax.swing.JPanel();
         jPanel30 = new javax.swing.JPanel();
-        jButton13 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jPanel31 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
@@ -68,10 +78,10 @@ public class MenuPrincipal extends javax.swing.JPanel {
         jPanel34 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jPanel35 = new javax.swing.JPanel();
-        jButton14 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         jPanel36 = new javax.swing.JPanel();
         jPanel37 = new javax.swing.JPanel();
-        jButton15 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         jPanel38 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
 
@@ -84,9 +94,9 @@ public class MenuPrincipal extends javax.swing.JPanel {
 
         add(jPanel1);
 
-        jPanel2.setLayout(new java.awt.GridLayout());
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel6.setLayout(new java.awt.GridLayout());
+        jPanel6.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel1.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         jLabel1.setText("Ingresar dinero");
@@ -101,10 +111,15 @@ public class MenuPrincipal extends javax.swing.JPanel {
 
         jPanel2.add(jPanel6);
 
-        jPanel7.setLayout(new java.awt.GridLayout());
+        jPanel7.setLayout(new java.awt.GridLayout(1, 0));
 
-        jButton10.setText("2");
-        jPanel16.add(jButton10);
+        jButton2.setText("2");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton2MousePressed(evt);
+            }
+        });
+        jPanel16.add(jButton2);
 
         jPanel7.add(jPanel16);
 
@@ -118,9 +133,9 @@ public class MenuPrincipal extends javax.swing.JPanel {
 
         add(jPanel2);
 
-        jPanel18.setLayout(new java.awt.GridLayout());
+        jPanel18.setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel19.setLayout(new java.awt.GridLayout());
+        jPanel19.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel11.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         jLabel11.setText("Transacciones");
@@ -128,17 +143,17 @@ public class MenuPrincipal extends javax.swing.JPanel {
 
         jPanel19.add(jPanel20);
 
-        jButton9.setText("3");
-        jPanel21.add(jButton9);
+        jButton3.setText("3");
+        jPanel21.add(jButton3);
 
         jPanel19.add(jPanel21);
 
         jPanel18.add(jPanel19);
 
-        jPanel22.setLayout(new java.awt.GridLayout());
+        jPanel22.setLayout(new java.awt.GridLayout(1, 0));
 
-        jButton11.setText("4");
-        jPanel23.add(jButton11);
+        jButton4.setText("4");
+        jPanel23.add(jButton4);
 
         jPanel22.add(jPanel23);
 
@@ -152,9 +167,9 @@ public class MenuPrincipal extends javax.swing.JPanel {
 
         add(jPanel18);
 
-        jPanel25.setLayout(new java.awt.GridLayout());
+        jPanel25.setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel26.setLayout(new java.awt.GridLayout());
+        jPanel26.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel13.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         jLabel13.setText("Pagos");
@@ -162,17 +177,17 @@ public class MenuPrincipal extends javax.swing.JPanel {
 
         jPanel26.add(jPanel27);
 
-        jButton12.setText("5");
-        jPanel28.add(jButton12);
+        jButton5.setText("5");
+        jPanel28.add(jButton5);
 
         jPanel26.add(jPanel28);
 
         jPanel25.add(jPanel26);
 
-        jPanel29.setLayout(new java.awt.GridLayout());
+        jPanel29.setLayout(new java.awt.GridLayout(1, 0));
 
-        jButton13.setText("6");
-        jPanel30.add(jButton13);
+        jButton6.setText("6");
+        jPanel30.add(jButton6);
 
         jPanel29.add(jPanel30);
 
@@ -186,9 +201,9 @@ public class MenuPrincipal extends javax.swing.JPanel {
 
         add(jPanel25);
 
-        jPanel32.setLayout(new java.awt.GridLayout());
+        jPanel32.setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel33.setLayout(new java.awt.GridLayout());
+        jPanel33.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel15.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         jLabel15.setText("Recargar teléfono");
@@ -196,17 +211,17 @@ public class MenuPrincipal extends javax.swing.JPanel {
 
         jPanel33.add(jPanel34);
 
-        jButton14.setText("7");
-        jPanel35.add(jButton14);
+        jButton7.setText("7");
+        jPanel35.add(jButton7);
 
         jPanel33.add(jPanel35);
 
         jPanel32.add(jPanel33);
 
-        jPanel36.setLayout(new java.awt.GridLayout());
+        jPanel36.setLayout(new java.awt.GridLayout(1, 0));
 
-        jButton15.setText("8");
-        jPanel37.add(jButton15);
+        jButton8.setText("8");
+        jPanel37.add(jButton8);
 
         jPanel36.add(jPanel37);
 
@@ -221,16 +236,22 @@ public class MenuPrincipal extends javax.swing.JPanel {
         add(jPanel32);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
+        this.setVisible(false);
+        boton = 2;
+        cajero.elegirSubmenu(boton);
+    }//GEN-LAST:event_jButton2MousePressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

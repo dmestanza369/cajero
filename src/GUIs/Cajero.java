@@ -5,7 +5,7 @@
  */
 package GUIs;
 
-import Controllers.CajeroController;
+import Database.CajeroController;
 import Scripts.Cuenta;
 
 import java.awt.Font;
@@ -18,32 +18,26 @@ import javax.swing.JOptionPane;
 public class Cajero extends javax.swing.JFrame {
 
     private CajeroController controller;
-    private Cuenta cuenta;
+    private int numerocuentaactiva;
+    private int PIN = 0;
+    private boolean isCorrect = false; 
     
-    /**
-     * Creates new form
-     */
+    MenuPrincipal menuprincipal;
+    OtraOperación otraoperacion;
+    SacarDinero sacardinero;
+    
     public Cajero() {
-        
-        this.controller = new CajeroController(cuenta);
-        
-        this.setTitle("Cajero"); //Título de la ventana
-        
-        MenuPrincipal menuprincipal = new MenuPrincipal();
-        OtraOperación otraoperacion = new OtraOperación();
-        SacarDinero sacardinero = new SacarDinero();
+        this.controller = new CajeroController();
 
-        this.getContentPane().add(menuprincipal);
-        this.getContentPane().add(otraoperacion);
-        this.getContentPane().add(sacardinero);
-        
-        initComponents();
-        this.setSize(1000, 600);
+        this.setTitle("Cajero"); //Título de la ventana
         this.setVisible(true);
-        
+ 
         //Fuentes
         Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
         Font Consolas24 = new java.awt.Font("Consolas", 0, 24);
+        
+        initComponents();
+        this.setSize(1000, 600);
         
         //Versión
         jLabel2.setFont(Consolas12);
@@ -52,43 +46,12 @@ public class Cajero extends javax.swing.JFrame {
         //PIN
         jLabel1.setFont(Consolas24);
         jLabel1.setText("ESCRIBA SU PIN:");
-        jPasswordField1.addActionListener(this.controller);
         jPasswordField1.setFont(Consolas24);
         jPasswordField1.setEchoChar('*');
-        
-        int pin = 0;
-        boolean isCorrect = true;
-        
-        //Pasar el PIN de char[] a string.
-        String contraseña = "";
-        for (int i = 0; i < jPasswordField1.getPassword().length; i++)
-            contraseña += jPasswordField1.getPassword()[i];
-
         jPasswordField1.setText("");
-        cuenta = this.controller.validaPin(Integer.parseInt(contraseña));
-        if (cuenta == null) isCorrect = false;
         
-        if (isCorrect){ //Muestra el menú principal
-            boolean isOtraOperacion;
-            int eleccion = -1;
-            do{
-                this.jPanel2.setVisible(false);
-                this.jPanel3.setVisible(false);
-                this.jPanel4.setVisible(false);
-                menuprincipal.setVisible(true);
-
-                switch(eleccion){
-                    case 1:
-                        //
-                        break;
-                }
-                
-                
-                isOtraOperacion = otraoperacion.getOtraOperacion();
-            }while(!isOtraOperacion);
-        } else {
-            JOptionPane.showMessageDialog(this, "ERROR");
-        }
+        jButton1.setFont(Consolas12);
+        jButton1.setText("Aceptar");
     }
 
     /**
@@ -105,6 +68,7 @@ public class Cajero extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -116,13 +80,24 @@ public class Cajero extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
 
         jPasswordField1.setToolTipText("");
+        jPasswordField1.setActionCommand("<Not Set>");
         jPasswordField1.setAutoscrolls(false);
+        jPasswordField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPasswordField1.setPreferredSize(new java.awt.Dimension(66, 40));
         jPanel1.add(jPasswordField1);
 
         jPanel2.add(jPanel1);
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
+
+        jButton1.setText("jButton1");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
+        jPanel3.add(jButton1);
+
         getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
 
         jLabel2.setText("jLabel2");
@@ -133,9 +108,69 @@ public class Cajero extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        if (jPasswordField1.getPassword().length == 4){
+            char[] textoC = jPasswordField1.getPassword();
+            String contraseña = new String(textoC);
+            PIN = Integer.parseInt(contraseña);
+        }
+        numerocuentaactiva = this.controller.validaPin(PIN);
+        setCuentas();
+        
+        if (numerocuentaactiva != -1){
+                this.jPanel2.setVisible(false);
+                this.jPanel3.setVisible(false);
+                this.jPanel4.setVisible(false);
+                menuprincipal.setVisible(true);
+        } else JOptionPane.showMessageDialog(this, "ERROR: Not a Number");
+    }//GEN-LAST:event_jButton1MousePressed
+
+    private void setCuentas() {
+        this.menuprincipal = new MenuPrincipal(this);
+        this.otraoperacion = new OtraOperación(this);
+        this.sacardinero = new SacarDinero(this, numerocuentaactiva);
+        
+        this.getContentPane().add(menuprincipal);
+        this.getContentPane().add(otraoperacion);
+        this.getContentPane().add(sacardinero);
+        
+        menuprincipal.setVisible(false);
+        otraoperacion.setVisible(false);
+        sacardinero.setVisible(false);
+    }
+    
+    public void elegirSubmenu(int eleccion){
+        switch(eleccion){
+            case 1:
+                //
+                break;
+            case 2:
+                sacardinero.setVisible(true);
+                break;
+            case 3:
+                //
+                break;
+            case 4:
+                //
+                break;
+            case 5:
+                //
+                break;
+            case 6:
+                //
+                break;
+            case 7:
+                this.jPanel2.setVisible(true);
+                this.jPanel3.setVisible(true);
+                this.jPanel4.setVisible(true);
+                break;
+        }
+    }
+    
+    public void activarMenuPrincipal(){
+        this.menuprincipal.setVisible(true);
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -170,6 +205,7 @@ public class Cajero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
