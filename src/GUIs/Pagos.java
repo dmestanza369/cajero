@@ -5,19 +5,46 @@
  */
 package GUIs;
 
+import Database.CajeroController;
+import java.awt.Font;
+
 /**
  *
  * @author a.jimenezg.2017
  */
 public class Pagos extends javax.swing.JPanel {
-    Cajero cajero;
+    private int cuenta;
+    private Cajero cajero;
+    private CajeroController controller;
     /**
      * Creates new form Pagos
      */
-    public Pagos(Cajero cajero) {
+    public Pagos(Cajero cajero, int cuenta) {
         initComponents();
         this.setSize(1000, 600);
         this.cajero = cajero;
+        this.cuenta = cuenta;
+        this.controller = cajero.getController();
+        
+        //Fuentes
+        Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
+        Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
+        
+        jLabel1.setFont(Consolas16);
+        jLabel1.setText("Pagos");
+        
+        jLabel2.setFont(Consolas12);
+        jLabel2.setText("Concepto");
+        jTextField1.setFont(Consolas12);
+        jTextField1.setText("");
+        
+        jLabel3.setFont(Consolas12);
+        jLabel3.setText("Cantidad");
+        jTextField2.setFont(Consolas12);
+        jTextField2.setText("");
+        
+        jButton1.setFont(Consolas12);
+        jButton1.setText("Pagar");
     }
 
     /**
@@ -31,15 +58,14 @@ public class Pagos extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
-        jPanel11 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jPanel11 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
@@ -54,33 +80,28 @@ public class Pagos extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.GridLayout(3, 1));
 
-        jPanel4.setLayout(new java.awt.GridLayout(3, 1));
-        jPanel1.add(jPanel4);
-
         jLabel1.setText("jLabel1");
-        jPanel5.add(jLabel1);
+        jPanel4.add(jLabel1);
 
+        jPanel1.add(jPanel4);
         jPanel1.add(jPanel5);
 
-        jPanel6.setLayout(new java.awt.GridLayout());
+        jPanel6.setLayout(new java.awt.GridLayout(1, 0));
         jPanel1.add(jPanel6);
 
         add(jPanel1);
 
         jPanel2.setLayout(new java.awt.GridLayout(3, 1));
 
-        jPanel7.setLayout(new java.awt.GridLayout(3, 1));
+        jLabel2.setText("jLabel2");
+        jPanel7.add(jLabel2);
+
+        jTextField1.setText("jTextField1");
+        jPanel7.add(jTextField1);
+
         jPanel2.add(jPanel7);
 
         jPanel11.setLayout(new java.awt.GridLayout(1, 2));
-
-        jLabel2.setText("jLabel2");
-        jPanel8.add(jLabel2);
-
-        jTextField1.setText("jTextField1");
-        jPanel8.add(jTextField1);
-
-        jPanel11.add(jPanel8);
 
         jLabel3.setText("jLabel3");
         jPanel9.add(jLabel3);
@@ -92,7 +113,7 @@ public class Pagos extends javax.swing.JPanel {
 
         jPanel2.add(jPanel11);
 
-        jPanel16.setLayout(new java.awt.GridLayout());
+        jPanel16.setLayout(new java.awt.GridLayout(1, 0));
         jPanel2.add(jPanel16);
 
         add(jPanel2);
@@ -103,15 +124,27 @@ public class Pagos extends javax.swing.JPanel {
         jPanel3.add(jPanel17);
 
         jButton1.setText("jButton1");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
         jPanel21.add(jButton1);
 
         jPanel3.add(jPanel21);
 
-        jPanel32.setLayout(new java.awt.GridLayout());
+        jPanel32.setLayout(new java.awt.GridLayout(1, 0));
         jPanel3.add(jPanel32);
 
         add(jPanel3);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        double pagar = Double.parseDouble(jTextField2.getText());
+        controller.moverSaldo(cuenta, pagar, jTextField1.getText());
+        this.setVisible(false);
+        cajero.activarOtraOperacion();
+    }//GEN-LAST:event_jButton1MousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -131,7 +164,6 @@ public class Pagos extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
