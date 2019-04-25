@@ -7,6 +7,7 @@ package GUIs;
 
 import Scripts.Cuenta;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -149,6 +150,11 @@ public class MenuPrincipal extends javax.swing.JPanel{
         jPanel19.add(jPanel20);
 
         jButton3.setText("3");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton3MousePressed(evt);
+            }
+        });
         jPanel21.add(jButton3);
 
         jPanel19.add(jPanel21);
@@ -158,6 +164,11 @@ public class MenuPrincipal extends javax.swing.JPanel{
         jPanel22.setLayout(new java.awt.GridLayout(1, 0));
 
         jButton4.setText("4");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton4MousePressed(evt);
+            }
+        });
         jPanel23.add(jButton4);
 
         jPanel22.add(jPanel23);
@@ -183,6 +194,11 @@ public class MenuPrincipal extends javax.swing.JPanel{
         jPanel26.add(jPanel27);
 
         jButton5.setText("5");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton5MousePressed(evt);
+            }
+        });
         jPanel28.add(jButton5);
 
         jPanel26.add(jPanel28);
@@ -192,6 +208,11 @@ public class MenuPrincipal extends javax.swing.JPanel{
         jPanel29.setLayout(new java.awt.GridLayout(1, 0));
 
         jButton6.setText("6");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton6MousePressed(evt);
+            }
+        });
         jPanel30.add(jButton6);
 
         jPanel29.add(jPanel30);
@@ -217,6 +238,11 @@ public class MenuPrincipal extends javax.swing.JPanel{
         jPanel33.add(jPanel34);
 
         jButton7.setText("7");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton7MousePressed(evt);
+            }
+        });
         jPanel35.add(jButton7);
 
         jPanel33.add(jPanel35);
@@ -263,6 +289,36 @@ public class MenuPrincipal extends javax.swing.JPanel{
         boton = 8;
         cajero.elegirSubmenu(boton);
     }//GEN-LAST:event_jButton8MousePressed
+
+    private void jButton3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MousePressed
+        this.setVisible(false);
+        boton = 3;
+        cajero.elegirSubmenu(boton);
+    }//GEN-LAST:event_jButton3MousePressed
+
+    private void jButton4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MousePressed
+        this.setVisible(false);
+        boton = 4;
+        cajero.elegirSubmenu(boton);
+    }//GEN-LAST:event_jButton4MousePressed
+
+    private void jButton5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MousePressed
+        this.setVisible(false);
+        boton = 5;
+        cajero.elegirSubmenu(boton);
+    }//GEN-LAST:event_jButton5MousePressed
+
+    private void jButton6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MousePressed
+        this.setVisible(false);
+        boton = 6;
+        cajero.elegirSubmenu(boton);
+    }//GEN-LAST:event_jButton6MousePressed
+
+    private void jButton7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MousePressed
+        this.setVisible(false);
+        boton = 7;
+        cajero.elegirSubmenu(boton);
+    }//GEN-LAST:event_jButton7MousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
