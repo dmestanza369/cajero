@@ -1,27 +1,33 @@
-Número de cuenta: 00000001
-Nombre: Álvaro Río López
+INICIALIZACIÃ“N DEL PROGRAMA:
+- 
+- 
+
+CUENTAS:
+
+1. NÃºmero de cuenta: 00000001
+Nombre: Ãlvaro RÃ­o LÃ³pez
 PIN: 1111
 
-Número de cuenta: 00000002
+2. NÃºmero de cuenta: 00000002
 Nombre: David Mestanza Rubia
 PIN: 2222
 
-Número de cuenta: 00000003
-Nombre: Alberto Jiménez Gómez
+3. NÃºmero de cuenta: 00000003
+Nombre: Alberto JimÃ©nez GÃ³mez
 PIN: 3333
 
-Número de cuenta: 00000004
-Nombre: Carlota Menéndez del Campo
+4. NÃºmero de cuenta: 00000004
+Nombre: Carlota MenÃ©ndez del Campo
 PIN: 4444
 
-Número de cuenta: 00000005
-Nombre: Azahara Andújar Muñoz-Quirós
+5. NÃºmero de cuenta: 00000005
+Nombre: Azahara AndÃºjar MuÃ±oz-QuirÃ³s
 PIN: 5555
 
-Número de cuenta: 00000006
-Nombre: Enrique Márquez Jiménez
+6. NÃºmero de cuenta: 00000006
+Nombre: Enrique MÃ¡rquez JimÃ©nez
 PIN: 6666
 
-Número de cuenta: 00000007
-Nombre: Manuel Martín Aláez
+7. NÃºmero de cuenta: 00000007
+Nombre: Manuel MartÃ­n AlÃ¡ez
 PIN: 7777
