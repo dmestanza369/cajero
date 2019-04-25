@@ -135,10 +135,10 @@ public class Cajero extends javax.swing.JFrame {
         this.menuprincipal = new MenuPrincipal(this);
         this.otraoperacion = new OtraOperación(this);
         this.sacardinero = new SacarDinero(this, numerocuentaactiva);
-        this.ingresardinero = new IngresarDinero(this,numerocuentaactiva);
+        this.ingresardinero = new IngresarDinero(this, numerocuentaactiva);
         this.transacciones = new Transacciones(this);
         this.cambiarpin = new CambiarPIN(this);
-        this.pagos = new Pagos(this);
+        this.pagos = new Pagos(this, numerocuentaactiva);
         this.movimientos = new Movimientos(this);
         
         this.getContentPane().add(menuprincipal);
@@ -196,8 +196,7 @@ public class Cajero extends javax.swing.JFrame {
     }
     
     public void activarOtraOperacion(){
-        this.otraoperacion.setVisible(true);
-        
+        this.otraoperacion.setVisible(true);   
     }
     
     public CajeroController getController() {

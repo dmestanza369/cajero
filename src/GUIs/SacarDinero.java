@@ -27,6 +27,7 @@ public class SacarDinero extends javax.swing.JPanel {
         this.cajero = cajero;
         this.numeroCuenta = cuenta;
         this.controller = cajero.getController();
+        
         //Fuentes
         Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
         Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
