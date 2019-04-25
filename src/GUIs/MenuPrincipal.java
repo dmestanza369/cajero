@@ -5,6 +5,7 @@
  */
 package GUIs;
 
+import Database.CajeroController;
 import Scripts.Cuenta;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -14,7 +15,8 @@ import java.awt.event.ActionEvent;
  * @author d.mestanza.2017
  */
 public class MenuPrincipal extends javax.swing.JPanel{
-    Cajero cajero;
+    private Cajero cajero;
+    private CajeroController controller;
     int boton = 0;
     /**
      * Creates new form MenuPrincipal
@@ -23,6 +25,8 @@ public class MenuPrincipal extends javax.swing.JPanel{
         initComponents();
         this.setSize(1000, 600);
         this.cajero = cajero;
+        this.controller = cajero.getController();
+        
         
         //Fuentes
         Font Consolas16 = new java.awt.Font("Consolas", 0, 16);

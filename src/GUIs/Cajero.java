@@ -30,6 +30,7 @@ public class Cajero extends javax.swing.JFrame {
     CambiarPIN cambiarpin;
     Pagos pagos;
     Movimientos movimientos;
+    RecargarTelefono recargartelefono;
     
     public Cajero() {
         this.controller = new CajeroController();
@@ -133,13 +134,14 @@ public class Cajero extends javax.swing.JFrame {
 
     private void setCuentas() {
         this.menuprincipal = new MenuPrincipal(this);
-        this.otraoperacion = new OtraOperación(this);
+        this.otraoperacion = new OtraOperación(this,numerocuentaactiva);
         this.sacardinero = new SacarDinero(this, numerocuentaactiva);
         this.ingresardinero = new IngresarDinero(this, numerocuentaactiva);
-        this.transacciones = new Transacciones(this);
-        this.cambiarpin = new CambiarPIN(this);
+        this.transacciones = new Transacciones(this,numerocuentaactiva);
+        this.cambiarpin = new CambiarPIN(this, numerocuentaactiva);
         this.pagos = new Pagos(this, numerocuentaactiva);
-        this.movimientos = new Movimientos(this);
+        this.movimientos = new Movimientos(this,numerocuentaactiva);
+        this.recargartelefono = new RecargarTelefono(this,numerocuentaactiva);
         
         this.getContentPane().add(menuprincipal);
         this.getContentPane().add(otraoperacion);
@@ -149,6 +151,7 @@ public class Cajero extends javax.swing.JFrame {
         this.getContentPane().add(cambiarpin);
         this.getContentPane().add(pagos);
         this.getContentPane().add(movimientos);
+        this.getContentPane().add(recargartelefono);
         
         menuprincipal.setVisible(false);
         otraoperacion.setVisible(false);
@@ -158,6 +161,7 @@ public class Cajero extends javax.swing.JFrame {
         cambiarpin.setVisible(false);
         pagos.setVisible(false);
         movimientos.setVisible(false);
+        recargartelefono.setVisible(false);
     }
     
     public void elegirSubmenu(int eleccion){
@@ -181,7 +185,7 @@ public class Cajero extends javax.swing.JFrame {
                 cambiarpin.setVisible(true);
                 break;
             case 7:
-                //
+                recargartelefono.setVisible(true);
                 break;
             case 8:
                 this.jPanel2.setVisible(true);

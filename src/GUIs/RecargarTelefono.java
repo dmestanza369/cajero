@@ -14,17 +14,21 @@ import javax.swing.JOptionPane;
  * @author a.rio.2017
  */
 public class RecargarTelefono extends javax.swing.JPanel {
+    private int numeroCuenta;
     private Cajero cajero;
     private CajeroController controller;
     int numeroconfirmacion = (int) Math.floor(1000 + Math.random()*9000+1);
     /**
      * Creates new form RecargarTelefono
      */
-    public RecargarTelefono(Cajero cajero) {
+    public RecargarTelefono(Cajero cajero,int cuenta) {
         initComponents();
         this.setSize(1000, 600);
         this.cajero = cajero;
+        this.numeroCuenta = cuenta;
         this.controller = cajero.getController();
+        this.setSize(1000, 600);
+        ;
         
         
         //Fuentes

@@ -5,6 +5,7 @@
  */
 package GUIs;
 
+import Database.CajeroController;
 import java.awt.Font;
 
 /**
@@ -13,15 +14,20 @@ import java.awt.Font;
  */
 public class OtraOperación extends javax.swing.JPanel {
 
-    Cajero cajero;
+    private int numeroCuenta;
+    private Cajero cajero;
+    private CajeroController controller;
 
     /**
      * Creates new form OtraAcción
      */
-    public OtraOperación(Cajero cajero) {
+    public OtraOperación(Cajero cajero,int cuenta) {
         initComponents();
         this.setSize(1000, 600);
         this.cajero = cajero;
+        this.numeroCuenta = cuenta;
+        this.controller = cajero.getController();
+        this.setSize(1000, 600);
         
         //Fuentes
         Font Consolas12 = new java.awt.Font("Consolas", 0, 12);

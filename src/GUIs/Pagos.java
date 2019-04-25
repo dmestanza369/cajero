@@ -13,7 +13,7 @@ import java.awt.Font;
  * @author a.jimenezg.2017
  */
 public class Pagos extends javax.swing.JPanel {
-    private int cuenta;
+    private int numeroCuenta;
     private Cajero cajero;
     private CajeroController controller;
     /**
@@ -23,7 +23,7 @@ public class Pagos extends javax.swing.JPanel {
         initComponents();
         this.setSize(1000, 600);
         this.cajero = cajero;
-        this.cuenta = cuenta;
+        this.numeroCuenta = cuenta;
         this.controller = cajero.getController();
         
         //Fuentes
@@ -141,7 +141,7 @@ public class Pagos extends javax.swing.JPanel {
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         double pagar = Double.parseDouble(jTextField2.getText());
-        controller.moverSaldo(cuenta, pagar, jTextField1.getText());
+        controller.moverSaldo(numeroCuenta, pagar, jTextField1.getText());
         this.setVisible(false);
         cajero.activarOtraOperacion();
     }//GEN-LAST:event_jButton1MousePressed

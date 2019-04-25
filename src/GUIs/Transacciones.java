@@ -5,19 +5,25 @@
  */
 package GUIs;
 
+import Database.CajeroController;
+
 /**
  *
  * @author a.jimenezg.2017
  */
 public class Transacciones extends javax.swing.JPanel {
-    Cajero cajero;
+    private int numeroCuenta;
+    private Cajero cajero;
+    private CajeroController controller;
     /**
      * Creates new form Transacciones
      */
-    public Transacciones(Cajero cajero) {
+    public Transacciones(Cajero cajero,int cuenta) {
         initComponents();
         this.setSize(1000, 600);
         this.cajero = cajero;
+        this.numeroCuenta = cuenta;
+        this.controller = cajero.getController();
     }
 
     /**

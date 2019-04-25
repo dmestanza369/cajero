@@ -5,6 +5,7 @@
  */
 package GUIs;
 
+import Database.CajeroController;
 import java.awt.Font;
 
 /**
@@ -12,18 +13,26 @@ import java.awt.Font;
  * @author a.jimenezg.2017
  */
 public class CambiarPIN extends javax.swing.JPanel {
-    Cajero cajero;
+    private int numeroCuenta;
+    private Cajero cajero;
+    private CajeroController controller;
     /**
      * Creates new form CambiarPIN
      */
-    public CambiarPIN(Cajero cajero) {
+    public CambiarPIN(Cajero cajero,int cuenta) {
         initComponents();
         this.setSize(1000, 600);
         this.cajero = cajero;
+        this.numeroCuenta = cuenta;
+        this.controller = cajero.getController();
+        this.setSize(1000, 600);
         
         //Fuentes
         Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
         Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
+        
+        jLabel1.setFont(Consolas16);
+        jLabel1.setText("Ingresar dinero");
     }
 
     /**

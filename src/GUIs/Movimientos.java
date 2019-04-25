@@ -5,19 +5,27 @@
  */
 package GUIs;
 
+import Database.CajeroController;
+
 /**
  *
  * @author a.jimenezg.2017
  */
 public class Movimientos extends javax.swing.JPanel {
-    Cajero cajero;
+    private int numeroCuenta;
+    private Cajero cajero;
+    private CajeroController controller;
     /**
      * Creates new form Movimientos
      */
-    public Movimientos(Cajero cajero) {
+    public Movimientos(Cajero cajero, int cuenta) {
         initComponents();
         this.setSize(1000, 600);
         this.cajero = cajero;
+        this.numeroCuenta = cuenta;
+        this.controller = cajero.getController();
+        initComponents();
+        this.setSize(1000, 600);
     }
 
     /**
