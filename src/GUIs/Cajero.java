@@ -25,7 +25,11 @@ public class Cajero extends javax.swing.JFrame {
     MenuPrincipal menuprincipal;
     OtraOperación otraoperacion;
     SacarDinero sacardinero;
-    IngresarDinero ingresarDinero;
+    IngresarDinero ingresardinero;
+    Transacciones transacciones;
+    CambiarPIN cambiarpin;
+    Pagos pagos;
+    Movimientos movimientos;
     
     public Cajero() {
         this.controller = new CajeroController();
@@ -131,38 +135,50 @@ public class Cajero extends javax.swing.JFrame {
         this.menuprincipal = new MenuPrincipal(this);
         this.otraoperacion = new OtraOperación(this);
         this.sacardinero = new SacarDinero(this, numerocuentaactiva);
-        this.ingresarDinero = new IngresarDinero(this,numerocuentaactiva);
+        this.ingresardinero = new IngresarDinero(this,numerocuentaactiva);
+        this.transacciones = new Transacciones(this);
+        this.cambiarpin = new CambiarPIN(this);
+        this.pagos = new Pagos(this);
+        this.movimientos = new Movimientos(this);
         
         this.getContentPane().add(menuprincipal);
         this.getContentPane().add(otraoperacion);
         this.getContentPane().add(sacardinero);
-        this.getContentPane().add(ingresarDinero);
+        this.getContentPane().add(ingresardinero);
+        this.getContentPane().add(transacciones);
+        this.getContentPane().add(cambiarpin);
+        this.getContentPane().add(pagos);
+        this.getContentPane().add(movimientos);
         
         menuprincipal.setVisible(false);
         otraoperacion.setVisible(false);
         sacardinero.setVisible(false);
-        ingresarDinero.setVisible(false);
+        ingresardinero.setVisible(false);
+        transacciones.setVisible(false);
+        cambiarpin.setVisible(false);
+        pagos.setVisible(false);
+        movimientos.setVisible(false);
     }
     
     public void elegirSubmenu(int eleccion){
         switch(eleccion){
             case 1:
-                ingresarDinero.setVisible(true);
+                ingresardinero.setVisible(true);
                 break;
             case 2:
                 sacardinero.setVisible(true);
                 break;
             case 3:
-                //
+                transacciones.setVisible(true);
                 break;
             case 4:
-                //
+                movimientos.setVisible(true);
                 break;
             case 5:
-                //
+                pagos.setVisible(true);
                 break;
             case 6:
-                //
+                cambiarpin.setVisible(true);
                 break;
             case 7:
                 //

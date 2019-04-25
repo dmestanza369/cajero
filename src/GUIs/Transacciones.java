@@ -10,12 +10,14 @@ package GUIs;
  * @author a.jimenezg.2017
  */
 public class Transacciones extends javax.swing.JPanel {
-
+    Cajero cajero;
     /**
      * Creates new form Transacciones
      */
-    public Transacciones() {
+    public Transacciones(Cajero cajero) {
         initComponents();
+        this.setSize(1000, 600);
+        this.cajero = cajero;
     }
 
     /**

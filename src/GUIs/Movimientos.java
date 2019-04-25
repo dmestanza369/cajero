@@ -10,12 +10,14 @@ package GUIs;
  * @author a.jimenezg.2017
  */
 public class Movimientos extends javax.swing.JPanel {
-
+    Cajero cajero;
     /**
      * Creates new form Movimientos
      */
-    public Movimientos() {
+    public Movimientos(Cajero cajero) {
         initComponents();
+        this.setSize(1000, 600);
+        this.cajero = cajero;
     }
 
     /**

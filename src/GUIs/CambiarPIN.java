@@ -10,12 +10,14 @@ package GUIs;
  * @author a.jimenezg.2017
  */
 public class CambiarPIN extends javax.swing.JPanel {
-
+    Cajero cajero;
     /**
      * Creates new form CambiarPIN
      */
-    public CambiarPIN() {
+    public CambiarPIN(Cajero cajero) {
         initComponents();
+        this.setSize(1000, 600);
+        this.cajero = cajero;
     }
 
     /**
