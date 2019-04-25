@@ -43,11 +43,9 @@ public class Cuenta {
         this.saldo = saldo;
     }
     
-    public void quitarDinero(int extraccion){
-        this.saldo=this.saldo-extraccion;
-        //String frase = "Extracción de "+extraccion+"€";
-        //movimientos=frase;
-    }
+    /*    public void quitarDinero(int extraccion){
+    this.saldo = this.saldo - extraccion;
+    }*/
 
     public String getMovimientos() {
         String mov = "";

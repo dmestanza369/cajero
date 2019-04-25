@@ -5,6 +5,8 @@
  */
 package GUIs;
 
+import java.awt.Font;
+
 /**
  *
  * @author a.jimenezg.2017
@@ -18,6 +20,10 @@ public class CambiarPIN extends javax.swing.JPanel {
         initComponents();
         this.setSize(1000, 600);
         this.cajero = cajero;
+        
+        //Fuentes
+        Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
+        Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
     }
 
     /**
@@ -31,8 +37,8 @@ public class CambiarPIN extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -54,15 +60,13 @@ public class CambiarPIN extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.GridLayout(3, 1));
 
-        jPanel4.setLayout(new java.awt.GridLayout(3, 1));
-        jPanel1.add(jPanel4);
-
         jLabel1.setText("jLabel1");
-        jPanel5.add(jLabel1);
+        jPanel4.add(jLabel1);
 
+        jPanel1.add(jPanel4);
         jPanel1.add(jPanel5);
 
-        jPanel6.setLayout(new java.awt.GridLayout());
+        jPanel6.setLayout(new java.awt.GridLayout(1, 0));
         jPanel1.add(jPanel6);
 
         add(jPanel1);
@@ -105,7 +109,7 @@ public class CambiarPIN extends javax.swing.JPanel {
 
         jPanel3.add(jPanel21);
 
-        jPanel32.setLayout(new java.awt.GridLayout());
+        jPanel32.setLayout(new java.awt.GridLayout(1, 0));
         jPanel3.add(jPanel32);
 
         add(jPanel3);
