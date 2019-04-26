@@ -32,7 +32,21 @@ public class CambiarPIN extends javax.swing.JPanel {
         Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
         
         jLabel1.setFont(Consolas16);
-        jLabel1.setText("Ingresar dinero");
+        jLabel1.setText("Cambiar PIN");
+        
+        jLabel2.setFont(Consolas12);
+        jLabel2.setText("PIN actual");
+        
+        jLabel3.setFont(Consolas12);
+        jLabel3.setText("Nuevo PIN");
+        
+        jLabel4.setFont(Consolas12);
+        jLabel4.setText("Confirmar nuevo PIN");
+        
+        jButton1.setFont(Consolas12);
+        jButton1.setText("Aceptar");
+        
+        
     }
 
     /**
@@ -85,7 +99,13 @@ public class CambiarPIN extends javax.swing.JPanel {
         jLabel2.setText("jLabel2");
         jPanel7.add(jLabel2);
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setMinimumSize(new java.awt.Dimension(100, 24));
+        jTextField1.setPreferredSize(new java.awt.Dimension(100, 24));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         jPanel7.add(jTextField1);
 
         jPanel2.add(jPanel7);
@@ -93,7 +113,8 @@ public class CambiarPIN extends javax.swing.JPanel {
         jLabel3.setText("jLabel2");
         jPanel11.add(jLabel3);
 
-        jTextField2.setText("jTextField1");
+        jTextField2.setMinimumSize(new java.awt.Dimension(100, 24));
+        jTextField2.setPreferredSize(new java.awt.Dimension(100, 24));
         jPanel11.add(jTextField2);
 
         jPanel2.add(jPanel11);
@@ -101,7 +122,13 @@ public class CambiarPIN extends javax.swing.JPanel {
         jLabel4.setText("jLabel2");
         jPanel16.add(jLabel4);
 
-        jTextField3.setText("jTextField1");
+        jTextField3.setMinimumSize(new java.awt.Dimension(100, 24));
+        jTextField3.setPreferredSize(new java.awt.Dimension(100, 24));
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
         jPanel16.add(jTextField3);
 
         jPanel2.add(jPanel16);
@@ -123,6 +150,14 @@ public class CambiarPIN extends javax.swing.JPanel {
 
         add(jPanel3);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
