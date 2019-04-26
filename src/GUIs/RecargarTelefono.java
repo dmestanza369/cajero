@@ -158,22 +158,25 @@ public class RecargarTelefono extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
-        Integer numerotelefono = Integer.parseInt(jTextField1.getText());
-        numeroconfirmacion = getNumConfirmacion();
-        JOptionPane.showMessageDialog(this, "Número de confirmación: " + numeroconfirmacion);
-        if(numerotelefono.intValue()==9){
-            this.setVisible(false);
-            cajero.activarOtraOperacion();
+        Integer numerotelefono = Integer.parseInt(jTextField1.getText()); 
+        int numeros = Integer.toString(numerotelefono).length();
+        if(numeros==9){
+            numeroconfirmacion = getNumConfirmacion();
+            JOptionPane.showMessageDialog(this, "Número de confirmación: " + numeroconfirmacion);
+           
         } else JOptionPane.showMessageDialog(this, "El número de telefono no existe");
     }//GEN-LAST:event_jButton1MousePressed
 
     private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
+        Integer numerotelefono = Integer.parseInt(jTextField1.getText()); 
         int numeroconfirmacionescrito = Integer.parseInt(jTextField3.getText());
-
-
+        int cantidad = -Integer.parseInt(jTextField2.getText());
         if(numeroconfirmacion == numeroconfirmacionescrito){
             this.setVisible(false);
             cajero.activarOtraOperacion();
+            String concepto ="Recarga al "+numerotelefono;
+            this.controller.moverSaldo(numeroCuenta, cantidad,concepto);
+
         }
         else JOptionPane.showMessageDialog(this, "El número de confirmación no es correcto.");
     }//GEN-LAST:event_jButton2MousePressed
