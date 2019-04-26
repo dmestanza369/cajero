@@ -113,7 +113,6 @@ public class Movimientos extends javax.swing.JPanel {
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         this.setVisible(false);
         cajero.activarOtraOperacion();
-        
     }//GEN-LAST:event_jButton1MousePressed
 
 
