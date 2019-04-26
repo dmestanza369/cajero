@@ -22,6 +22,6 @@ public class Movimiento {
     
     public String getMovimiento(){
         DecimalFormat df = new DecimalFormat("#####.##");
-        return this.concepto + ": " + df.format(this.cantidad);
+        return this.concepto + ": " + df.format(this.cantidad) + "€";
     };
 }
