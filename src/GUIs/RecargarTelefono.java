@@ -27,9 +27,6 @@ public class RecargarTelefono extends javax.swing.JPanel {
         this.cajero = cajero;
         this.numeroCuenta = cuenta;
         this.controller = cajero.getController();
-        this.setSize(1000, 600);
-        ;
-        
         
         //Fuentes
         Font Consolas12 = new java.awt.Font("Consolas", 0, 12);

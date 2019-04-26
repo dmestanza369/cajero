@@ -47,7 +47,7 @@ public class Cajero extends javax.swing.JFrame {
         
         //Versión
         jLabel2.setFont(Consolas12);
-        jLabel2.setText("Versión");
+        jLabel2.setText("Versión 1.0");
         
         //PIN
         jLabel1.setFont(Consolas24);
