@@ -160,7 +160,7 @@ public class RecargarTelefono extends javax.swing.JPanel {
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         Integer numerotelefono = Integer.parseInt(jTextField1.getText()); 
         int numeros = Integer.toString(numerotelefono).length();
-        if(numeros==9){
+        if(numeros == 9 && numerotelefono >= 600000000 && numerotelefono <= 799999999){
             numeroconfirmacion = getNumConfirmacion();
             JOptionPane.showMessageDialog(this, "Número de confirmación: " + numeroconfirmacion);
            
