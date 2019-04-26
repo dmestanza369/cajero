@@ -151,10 +151,12 @@ public class Pagos extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
-        double pagar = Double.parseDouble(jTextField2.getText());
-        controller.moverSaldo(numeroCuenta, pagar, jComboBox1.getActionCommand());
-        this.setVisible(false);
-        cajero.activarOtraOperacion();
+        double pagar = -Double.parseDouble(jTextField2.getText());
+        if(this.controller.haySaldo(numeroCuenta, -pagar)){
+            controller.moverSaldo(numeroCuenta, pagar, jComboBox1.getActionCommand());
+            this.setVisible(false);
+            cajero.activarOtraOperacion();
+        }
     }//GEN-LAST:event_jButton1MousePressed
 
 

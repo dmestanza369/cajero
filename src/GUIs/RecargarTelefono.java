@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author a.rio.2017
  */
 public class RecargarTelefono extends javax.swing.JPanel {
-    private int numeroCuenta;
+    private int numerocuenta;
     private Cajero cajero;
     private CajeroController controller;
     int numeroconfirmacion;
@@ -25,7 +25,7 @@ public class RecargarTelefono extends javax.swing.JPanel {
         initComponents();
         this.setSize(1000, 600);
         this.cajero = cajero;
-        this.numeroCuenta = cuenta;
+        this.numerocuenta = cuenta;
         this.controller = cajero.getController();
         
         //Fuentes
@@ -172,9 +172,11 @@ public class RecargarTelefono extends javax.swing.JPanel {
         int numeroconfirmacionescrito = Integer.parseInt(jTextField3.getText());
         int cantidad = -Integer.parseInt(jTextField2.getText());
         if(numeroconfirmacion == numeroconfirmacionescrito){
-            this.controller.moverSaldo(numeroCuenta, cantidad, "RECARGA A " + numerotelefono);
-            this.setVisible(false);
-            cajero.activarOtraOperacion();
+            if(this.controller.haySaldo(numerocuenta, -cantidad)){
+                this.controller.moverSaldo(numerocuenta, cantidad, "RECARGA A " + numerotelefono);
+                this.setVisible(false);
+                cajero.activarOtraOperacion();
+            }
         }
         else JOptionPane.showMessageDialog(this, "El número de confirmación no es correcto.");
     }//GEN-LAST:event_jButton2MousePressed

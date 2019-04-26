@@ -39,7 +39,7 @@ public class SacarDinero extends javax.swing.JPanel {
         jButton1.setText("Aceptar");
         
         jTextField1.setFont(Consolas12);
-        jTextField1.setText("a");
+        jTextField1.setText("");
     }
 
     /**
@@ -103,15 +103,11 @@ public class SacarDinero extends javax.swing.JPanel {
         add(jPanel5, java.awt.BorderLayout.PAGE_END);
     }// </editor-fold>//GEN-END:initComponents
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        double sacar = -1;
-        if(jTextField1.getText() != "")
-            sacar = Double.parseDouble(jTextField1.getText()); //CAMBIAR LA COMPROBACIÓN PARA CUANDO ESTÁ VACIO (TAMBIÉN EN INGRESAR DINERO)
-        if(sacar >= 0 ){
-            sacar = -sacar; //
+        double sacar = 0;
+        if(jTextField1.getText() != "") sacar = -Double.parseDouble(jTextField1.getText());
         int OK = 0;
-        if (-sacar <= controller.getSaldo(numeroCuenta)){
+        if (this.controller.haySaldo(numeroCuenta, -sacar)){
             OK = this.controller.moverSaldo(numeroCuenta, sacar,"RETIRADA EN EFECTIVO");//el this puede que sobre
-            System.out.println(this.controller.getSaldo(numeroCuenta));
             if (OK == -1) JOptionPane.showMessageDialog(this, "ERROR");
             else{
                 this.setVisible(false);
@@ -120,7 +116,6 @@ public class SacarDinero extends javax.swing.JPanel {
         }
         else JOptionPane.showMessageDialog(this, "ERROR: SALDO INSUFICIENTE");
         jTextField1.setText("");
-        }
     }//GEN-LAST:event_jButton1MouseClicked
 
 

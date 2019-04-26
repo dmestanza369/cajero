@@ -44,5 +44,12 @@ public class CajeroController{
         DB.setPIN(numerocuenta, PIN);
     }
     
+    public boolean existeCuenta(int numerocuenta){
+        return (DB.buscarCuenta(numerocuenta) != null);
+    }
+    
+    public boolean haySaldo(int numerocuenta, double retirada){
+        return getSaldo(numerocuenta) > retirada;
+    }
 
 }

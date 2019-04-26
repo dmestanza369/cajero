@@ -7,13 +7,14 @@ package GUIs;
 
 import Database.CajeroController;
 import java.awt.Font;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author a.jimenezg.2017
  */
 public class Transacciones extends javax.swing.JPanel {
-    private int numeroCuenta;
+    private int numerocuenta;
     private Cajero cajero;
     private CajeroController controller;
     /**
@@ -23,7 +24,7 @@ public class Transacciones extends javax.swing.JPanel {
         initComponents();
         this.setSize(1000, 600);
         this.cajero = cajero;
-        this.numeroCuenta = cuenta;
+        this.numerocuenta = cuenta;
         this.controller = cajero.getController();
         
         //Fuentes
@@ -34,7 +35,7 @@ public class Transacciones extends javax.swing.JPanel {
         jLabel1.setText("Transacciones");
         
         jLabel6.setFont(Consolas12);
-        jLabel6.setText("Número de cuenta");
+        jLabel6.setText("Destinatario (número de cuenta)");
         
         jLabel7.setFont(Consolas12);
         jLabel7.setText("Cantidad");
@@ -108,11 +109,6 @@ public class Transacciones extends javax.swing.JPanel {
         jTextField5.setMinimumSize(new java.awt.Dimension(100, 24));
         jTextField5.setName(""); // NOI18N
         jTextField5.setPreferredSize(new java.awt.Dimension(100, 24));
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
         jPanel11.add(jTextField5);
 
         jPanel2.add(jPanel11);
@@ -122,11 +118,6 @@ public class Transacciones extends javax.swing.JPanel {
 
         jTextField6.setMinimumSize(new java.awt.Dimension(100, 24));
         jTextField6.setPreferredSize(new java.awt.Dimension(100, 24));
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
         jPanel16.add(jTextField6);
 
         jPanel2.add(jPanel16);
@@ -136,11 +127,6 @@ public class Transacciones extends javax.swing.JPanel {
 
         jComboBox1.setMinimumSize(new java.awt.Dimension(100, 24));
         jComboBox1.setPreferredSize(new java.awt.Dimension(100, 24));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
         jPanel12.add(jComboBox1);
 
         jPanel2.add(jPanel12);
@@ -153,6 +139,11 @@ public class Transacciones extends javax.swing.JPanel {
         jPanel3.add(jPanel17);
 
         jButton1.setText("jButton1");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
         jPanel21.add(jButton1);
 
         jPanel3.add(jPanel21);
@@ -163,17 +154,18 @@ public class Transacciones extends javax.swing.JPanel {
         add(jPanel3);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        //  code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        int destinatario = Integer.parseInt(jTextField5.getText());
+        if (this.controller.existeCuenta(destinatario)){
+            double dinero = Double.parseDouble(jTextField6.getText());
+            if (this.controller.haySaldo(numerocuenta, dinero)){
+                //Quitar dinero
+                this.controller.moverSaldo(numerocuenta, -dinero, "TRANSACCIÓN A " + destinatario);
+                //Dar dinero
+                this.controller.moverSaldo(destinatario, dinero, "TRANSACCIÓN DESDE " + numerocuenta);
+            }
+        } else JOptionPane.showMessageDialog(this, "El destinatario no existe.");
+    }//GEN-LAST:event_jButton1MousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
