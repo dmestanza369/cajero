@@ -57,19 +57,18 @@ public class Movimientos extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
-        setMinimumSize(new java.awt.Dimension(1000, 600));
-        setPreferredSize(new java.awt.Dimension(1000, 600));
+        setMinimumSize(new java.awt.Dimension(516, 175));
+        setPreferredSize(new java.awt.Dimension(100, 60));
         setLayout(new java.awt.BorderLayout(25, 25));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 100));
-        jPanel1.setLayout(new java.awt.BorderLayout());
 
         jPanel6.setPreferredSize(new java.awt.Dimension(350, 220));
 
@@ -86,9 +85,7 @@ public class Movimientos extends javax.swing.JPanel {
 
         jPanel6.add(jPanel2);
 
-        jPanel1.add(jPanel6, java.awt.BorderLayout.CENTER);
-
-        add(jPanel1, java.awt.BorderLayout.CENTER);
+        jPanel1.add(jPanel6);
 
         jButton1.setText("jButton1");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -96,7 +93,9 @@ public class Movimientos extends javax.swing.JPanel {
                 jButton1MousePressed(evt);
             }
         });
-        jPanel5.add(jButton1);
+        jPanel1.add(jButton1);
+
+        add(jPanel1, java.awt.BorderLayout.CENTER);
 
         jPanel3.add(jPanel5);
 
