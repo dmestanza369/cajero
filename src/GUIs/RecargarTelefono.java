@@ -51,8 +51,8 @@ public class RecargarTelefono extends javax.swing.JPanel {
         jButton1.setFont(Consolas12);
         jButton1.setText("Aceptar");
         
-        jButton1.setFont(Consolas12);
-        jButton1.setText("Confirmar");
+        jButton2.setFont(Consolas12);
+        jButton2.setText("Confirmar");
         
         jTextField1.setFont(Consolas12);
         jTextField1.setText("");
@@ -99,7 +99,8 @@ public class RecargarTelefono extends javax.swing.JPanel {
         jLabel1.setText("jLabel1");
         jPanel2.add(jLabel1);
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setMinimumSize(new java.awt.Dimension(100, 24));
+        jTextField1.setPreferredSize(new java.awt.Dimension(100, 24));
         jPanel2.add(jTextField1);
 
         add(jPanel2);
@@ -107,7 +108,8 @@ public class RecargarTelefono extends javax.swing.JPanel {
         jLabel2.setText("jLabel1");
         jPanel3.add(jLabel2);
 
-        jTextField2.setText("jTextField1");
+        jTextField2.setMinimumSize(new java.awt.Dimension(100, 24));
+        jTextField2.setPreferredSize(new java.awt.Dimension(100, 24));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -130,7 +132,13 @@ public class RecargarTelefono extends javax.swing.JPanel {
         jLabel3.setText("jLabel3");
         jPanel5.add(jLabel3);
 
-        jTextField3.setText("jTextField3");
+        jTextField3.setMinimumSize(new java.awt.Dimension(100, 24));
+        jTextField3.setPreferredSize(new java.awt.Dimension(100, 24));
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
         jPanel5.add(jTextField3);
 
         jButton2.setText("jButton2");
@@ -160,6 +168,10 @@ public class RecargarTelefono extends javax.swing.JPanel {
         }
         else JOptionPane.showMessageDialog(this, "El número de confirmación no es correcto.");
     }//GEN-LAST:event_jButton2MousePressed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

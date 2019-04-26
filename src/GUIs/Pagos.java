@@ -35,16 +35,22 @@ public class Pagos extends javax.swing.JPanel {
         
         jLabel2.setFont(Consolas12);
         jLabel2.setText("Concepto");
-        jTextField1.setFont(Consolas12);
-        jTextField1.setText("");
         
         jLabel3.setFont(Consolas12);
         jLabel3.setText("Cantidad");
+        
         jTextField2.setFont(Consolas12);
         jTextField2.setText("");
         
         jButton1.setFont(Consolas12);
         jButton1.setText("Pagar");
+        
+        jComboBox1.addItem("Impuestos");
+        jComboBox1.addItem("Luz");
+        jComboBox1.addItem("Agua");
+        jComboBox1.addItem("Gas");
+        jComboBox1.addItem("Multa");
+        
     }
 
     /**
@@ -64,7 +70,7 @@ public class Pagos extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel11 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -96,8 +102,9 @@ public class Pagos extends javax.swing.JPanel {
         jLabel2.setText("jLabel2");
         jPanel7.add(jLabel2);
 
-        jTextField1.setText("jTextField1");
-        jPanel7.add(jTextField1);
+        jComboBox1.setMinimumSize(new java.awt.Dimension(100, 24));
+        jComboBox1.setPreferredSize(new java.awt.Dimension(100, 24));
+        jPanel7.add(jComboBox1);
 
         jPanel2.add(jPanel7);
 
@@ -107,6 +114,8 @@ public class Pagos extends javax.swing.JPanel {
         jPanel9.add(jLabel3);
 
         jTextField2.setText("jTextField2");
+        jTextField2.setMinimumSize(new java.awt.Dimension(100, 24));
+        jTextField2.setPreferredSize(new java.awt.Dimension(100, 24));
         jPanel9.add(jTextField2);
 
         jPanel11.add(jPanel9);
@@ -141,7 +150,7 @@ public class Pagos extends javax.swing.JPanel {
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         double pagar = Double.parseDouble(jTextField2.getText());
-        controller.moverSaldo(numeroCuenta, pagar, jTextField1.getText());
+        controller.moverSaldo(numeroCuenta, pagar, jComboBox1.getActionCommand());
         this.setVisible(false);
         cajero.activarOtraOperacion();
     }//GEN-LAST:event_jButton1MousePressed
@@ -149,6 +158,7 @@ public class Pagos extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -165,7 +175,6 @@ public class Pagos extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
