@@ -41,7 +41,7 @@ public class MenuPrincipal extends javax.swing.JPanel{
         jButton1.setText("1");
 
         jLabel10.setFont(Consolas12);
-        jLabel10.setText("Retirar dinero");
+        jLabel10.setText("Sacar dinero");
         jButton2.setFont(Consolas12);
         jButton2.setText("2");
 

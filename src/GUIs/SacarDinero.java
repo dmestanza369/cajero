@@ -33,7 +33,7 @@ public class SacarDinero extends javax.swing.JPanel {
         Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
         
         jLabel1.setFont(Consolas16);
-        jLabel1.setText("Retirar dinero");
+        jLabel1.setText("Sacar dinero");
         
         jButton1.setFont(Consolas12);
         jButton1.setText("Aceptar");
