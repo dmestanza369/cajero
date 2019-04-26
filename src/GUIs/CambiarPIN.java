@@ -7,6 +7,7 @@ package GUIs;
 
 import Database.CajeroController;
 import java.awt.Font;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,7 +26,6 @@ public class CambiarPIN extends javax.swing.JPanel {
         this.cajero = cajero;
         this.numeroCuenta = cuenta;
         this.controller = cajero.getController();
-        this.setSize(1000, 600);
         
         //Fuentes
         Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
@@ -36,17 +36,19 @@ public class CambiarPIN extends javax.swing.JPanel {
         
         jLabel2.setFont(Consolas12);
         jLabel2.setText("PIN actual");
+        jTextField1.setFont(Consolas12);
         
         jLabel3.setFont(Consolas12);
         jLabel3.setText("Nuevo PIN");
+        jTextField2.setFont(Consolas12);
         
         jLabel4.setFont(Consolas12);
         jLabel4.setText("Confirmar nuevo PIN");
+        jTextField3.setFont(Consolas12);
         
         jButton1.setFont(Consolas12);
         jButton1.setText("Aceptar");
-        
-        
+    
     }
 
     /**
@@ -101,11 +103,6 @@ public class CambiarPIN extends javax.swing.JPanel {
 
         jTextField1.setMinimumSize(new java.awt.Dimension(100, 24));
         jTextField1.setPreferredSize(new java.awt.Dimension(100, 24));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
         jPanel7.add(jTextField1);
 
         jPanel2.add(jPanel7);
@@ -124,11 +121,6 @@ public class CambiarPIN extends javax.swing.JPanel {
 
         jTextField3.setMinimumSize(new java.awt.Dimension(100, 24));
         jTextField3.setPreferredSize(new java.awt.Dimension(100, 24));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
         jPanel16.add(jTextField3);
 
         jPanel2.add(jPanel16);
@@ -141,6 +133,11 @@ public class CambiarPIN extends javax.swing.JPanel {
         jPanel3.add(jPanel17);
 
         jButton1.setText("jButton1");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
         jPanel21.add(jButton1);
 
         jPanel3.add(jPanel21);
@@ -151,13 +148,19 @@ public class CambiarPIN extends javax.swing.JPanel {
         add(jPanel3);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        if(this.controller.getPin(numeroCuenta) == Integer.parseInt(jTextField1.getText())){
+            if(jTextField2.getText().equals(jTextField3.getText())){
+                if(this.controller.isPINUnique(Integer.parseInt(jTextField3.getText()))){
+                    this.controller.setPin(numeroCuenta, Integer.parseInt(jTextField3.getText()));            
+                    this.setVisible(false);
+                    cajero.activarOtraOperacion();
+                } else JOptionPane.showMessageDialog(this, "Este PIN ya existe.");
+            } else JOptionPane.showMessageDialog(this, "Los campos no coinciden.");
+        } else JOptionPane.showMessageDialog(this, "PIN incorrecto.");
+        
+            
+    }//GEN-LAST:event_jButton1MousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

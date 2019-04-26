@@ -14,7 +14,7 @@ import Database.Database;
  */
 public class CajeroController{
     
-    private Database DB = new Database();    
+    private Database DB = new Database();
     
     public int validaPin(int PIN) {  
         return DB.buscarCuentaPIN(PIN);
@@ -29,6 +29,20 @@ public class CajeroController{
     }
     
     public String getStringMovimientos(int numerocuenta){
-        return DB.getMovimientos(numerocuenta);
+        return DB.buscarCuenta(numerocuenta).getMovimientos();
     }
+    
+    public boolean isPINUnique(int PIN){
+        return DB.isPINUnique(PIN);
+    }
+    
+    public int getPin(int numerocuenta){
+        return DB.buscarCuenta(numerocuenta).getPin();
+    }
+    
+    public void setPin(int numerocuenta, int PIN){
+        DB.setPIN(numerocuenta, PIN);
+    }
+    
+
 }

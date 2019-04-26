@@ -63,13 +63,19 @@ public class Database {
         }
         return -1;
     }
-    
-    public String getMovimientos(int numerocuenta){
+
+    public boolean isPINUnique(int PIN) {
         for (int i = 0; i < DATABASE.size(); i++){
-            if(DATABASE.get(i).getNumerocuenta()== numerocuenta)
-                return DATABASE.get(i).getMovimientos();
+            if(DATABASE.get(i).getPin() == PIN) return false;
         }
-        return "";
+        return true;
     }
     
+    public void setPIN(int numerocuenta, int PIN){
+        for (int i = 0; i < DATABASE.size(); i++){
+            if(DATABASE.get(i).getNumerocuenta()== numerocuenta)
+                DATABASE.get(i).setPin(PIN);
+                break;
+        }
+    }
 }
