@@ -39,7 +39,7 @@ public class SacarDinero extends javax.swing.JPanel {
         jButton1.setText("Aceptar");
         
         jTextField1.setFont(Consolas12);
-        jTextField1.setText("");
+        jTextField1.setText("a");
     }
 
     /**
