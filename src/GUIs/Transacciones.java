@@ -45,10 +45,11 @@ public class Transacciones extends javax.swing.JPanel {
         jButton1.setFont(Consolas12);
         jButton1.setText("Aceptar");
         
-        jComboBox1.addItem("Viaje");
-        jComboBox1.addItem("Regalo");
-        jComboBox1.addItem("Prestamo");
-        jComboBox1.addItem("Otros");
+        jComboBox1.setFont(Consolas12);
+        jComboBox1.addItem("VIAJE");
+        jComboBox1.addItem("REGALO");
+        jComboBox1.addItem("PRÉSTAMO");
+        jComboBox1.addItem("OTROS");
         
     }
 

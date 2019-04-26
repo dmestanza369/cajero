@@ -45,11 +45,12 @@ public class Pagos extends javax.swing.JPanel {
         jButton1.setFont(Consolas12);
         jButton1.setText("Pagar");
         
-        jComboBox1.addItem("Impuestos");
-        jComboBox1.addItem("Luz");
-        jComboBox1.addItem("Agua");
-        jComboBox1.addItem("Gas");
-        jComboBox1.addItem("Multa");
+        jComboBox1.setFont(Consolas12);
+        jComboBox1.addItem("IMPUESTOS");
+        jComboBox1.addItem("LUZ");
+        jComboBox1.addItem("AGUA");
+        jComboBox1.addItem("GAS");
+        jComboBox1.addItem("MULTA");
         
     }
 

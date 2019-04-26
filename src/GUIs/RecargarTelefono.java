@@ -172,11 +172,9 @@ public class RecargarTelefono extends javax.swing.JPanel {
         int numeroconfirmacionescrito = Integer.parseInt(jTextField3.getText());
         int cantidad = -Integer.parseInt(jTextField2.getText());
         if(numeroconfirmacion == numeroconfirmacionescrito){
+            this.controller.moverSaldo(numeroCuenta, cantidad, "RECARGA A " + numerotelefono);
             this.setVisible(false);
             cajero.activarOtraOperacion();
-            String concepto ="Recarga al "+numerotelefono;
-            this.controller.moverSaldo(numeroCuenta, cantidad,concepto);
-
         }
         else JOptionPane.showMessageDialog(this, "El número de confirmación no es correcto.");
     }//GEN-LAST:event_jButton2MousePressed
