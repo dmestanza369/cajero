@@ -52,6 +52,7 @@ public class Pagos extends javax.swing.JPanel {
         jComboBox1.addItem("GAS");
         jComboBox1.addItem("MULTA");
         
+        jTextField2.setFont(Consolas12);
     }
 
     /**

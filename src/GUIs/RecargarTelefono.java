@@ -57,8 +57,8 @@ public class RecargarTelefono extends javax.swing.JPanel {
         jTextField2.setFont(Consolas12);
         jTextField2.setText("");
         
-        jTextField2.setFont(Consolas12);
-        jTextField2.setText("");
+        jTextField3.setFont(Consolas12);
+        jTextField3.setText("");
     }
     
     private int getNumConfirmacion() {
