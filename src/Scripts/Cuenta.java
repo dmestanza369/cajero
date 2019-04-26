@@ -34,7 +34,6 @@ public class Cuenta {
         this.pin = pin;
     }
 
-
     public double getSaldo() {
         return saldo;
     }
@@ -42,15 +41,11 @@ public class Cuenta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    
-    /*    public void quitarDinero(int extraccion){
-    this.saldo = this.saldo - extraccion;
-    }*/
 
     public String getMovimientos() {
         String mov = "";
         for (int i = 0; i < movimientos.size(); i++)
-            mov += movimientos.get(i).getMovimiento() + "/n";
+            mov += movimientos.get(i).getMovimiento() + "\n";
         return mov;
     }
 

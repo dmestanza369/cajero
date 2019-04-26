@@ -176,6 +176,7 @@ public class Cajero extends javax.swing.JFrame {
                 transacciones.setVisible(true);
                 break;
             case 4:
+                movimientos.addMovimientos();
                 movimientos.setVisible(true);
                 break;
             case 5:

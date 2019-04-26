@@ -6,6 +6,7 @@
 package GUIs;
 
 import Database.CajeroController;
+import java.awt.Font;
 
 /**
  *
@@ -24,8 +25,22 @@ public class Movimientos extends javax.swing.JPanel {
         this.cajero = cajero;
         this.numeroCuenta = cuenta;
         this.controller = cajero.getController();
-        initComponents();
-        this.setSize(1000, 600);
+        //Fuentes
+        Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
+        Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
+        
+        jLabel1.setFont(Consolas16);
+        jLabel1.setText("Movimientos");
+        
+        jButton1.setFont(Consolas12);
+        jButton1.setText("Aceptar");
+        
+        jTextArea1.setFont(Consolas12);
+        jTextArea1.setEditable(false);
+    }
+    
+    public void addMovimientos(){
+        jTextArea1.setText(this.controller.getStringMovimientos(numeroCuenta));
     }
 
     /**
@@ -39,77 +54,67 @@ public class Movimientos extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setMinimumSize(new java.awt.Dimension(1000, 600));
+        setPreferredSize(new java.awt.Dimension(1000, 600));
+        setLayout(new java.awt.BorderLayout(25, 25));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 100));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 15, Short.MAX_VALUE)
-        );
+        jPanel6.setPreferredSize(new java.awt.Dimension(350, 220));
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 15));
+        jPanel2.setPreferredSize(new java.awt.Dimension(320, 200));
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setMinimumSize(new java.awt.Dimension(150, 150));
+        jTextArea1.setPreferredSize(new java.awt.Dimension(150, 150));
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel2.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        jPanel6.add(jPanel2);
+
+        jPanel1.add(jPanel6, java.awt.BorderLayout.CENTER);
+
+        add(jPanel1, java.awt.BorderLayout.CENTER);
+
+        jButton1.setText("jButton1");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
+        jPanel5.add(jButton1);
+
+        jPanel3.add(jPanel5);
+
+        add(jPanel3, java.awt.BorderLayout.PAGE_END);
 
         jLabel1.setText("jLabel1");
         jPanel7.add(jLabel1);
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 15, 400, 35));
+        jPanel8.add(jPanel7);
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 50));
-
-        jPanel2.setPreferredSize(new java.awt.Dimension(210, 10));
-
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(320, 190));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setMargin(null);
-        jTextArea1.setPreferredSize(new java.awt.Dimension(300, 150));
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jPanel2.add(jScrollPane1);
-
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 200));
-
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 15, Short.MAX_VALUE)
-        );
-
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 15));
-
-        jButton1.setText("jButton1");
-        jPanel5.add(jButton1);
-
-        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 15, 400, 35));
-
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 400, 50));
+        add(jPanel8, java.awt.BorderLayout.PAGE_START);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        this.setVisible(false);
+        cajero.activarOtraOperacion();
+        
+    }//GEN-LAST:event_jButton1MousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -118,10 +123,10 @@ public class Movimientos extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

@@ -47,9 +47,8 @@ public class Database {
     
     public Cuenta buscarCuenta(int numerocuenta){
         for (int i = 0; i < DATABASE.size(); i++){
-            if(DATABASE.get(i).getNumerocuenta()== numerocuenta){
+            if(DATABASE.get(i).getNumerocuenta()== numerocuenta)
                 return DATABASE.get(i);
-            }
         }
         return null;
     }
@@ -63,6 +62,14 @@ public class Database {
             }
         }
         return -1;
+    }
+    
+    public String getMovimientos(int numerocuenta){
+        for (int i = 0; i < DATABASE.size(); i++){
+            if(DATABASE.get(i).getNumerocuenta()== numerocuenta)
+                return DATABASE.get(i).getMovimientos();
+        }
+        return "";
     }
     
 }

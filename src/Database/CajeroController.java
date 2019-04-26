@@ -27,4 +27,8 @@ public class CajeroController{
     public double getSaldo(int numerocuenta){
         return DB.buscarCuenta(numerocuenta).getSaldo();
     }
+    
+    public String getStringMovimientos(int numerocuenta){
+        return DB.getMovimientos(numerocuenta);
+    }
 }
