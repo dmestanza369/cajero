@@ -17,7 +17,7 @@ public class RecargarTelefono extends javax.swing.JPanel {
     private int numeroCuenta;
     private Cajero cajero;
     private CajeroController controller;
-    int numeroconfirmacion = (int) Math.floor(1000 + Math.random()*9000+1);
+    int numeroconfirmacion;
     /**
      * Creates new form RecargarTelefono
      */
@@ -62,6 +62,10 @@ public class RecargarTelefono extends javax.swing.JPanel {
         
         jTextField2.setFont(Consolas12);
         jTextField2.setText("");
+    }
+    
+    private int getNumConfirmacion() {
+        return (int) Math.floor(1000 + Math.random()*9000+1);
     }
 
     /**
@@ -157,11 +161,19 @@ public class RecargarTelefono extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        Integer numerotelefono = Integer.parseInt(jTextField1.getText());
+        numeroconfirmacion = getNumConfirmacion();
         JOptionPane.showMessageDialog(this, "Número de confirmación: " + numeroconfirmacion);
+        if(numerotelefono.intValue()==9){
+            this.setVisible(false);
+            cajero.activarOtraOperacion();
+        } else JOptionPane.showMessageDialog(this, "El número de telefono no existe");
     }//GEN-LAST:event_jButton1MousePressed
 
     private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
         int numeroconfirmacionescrito = Integer.parseInt(jTextField3.getText());
+
+
         if(numeroconfirmacion == numeroconfirmacionescrito){
             this.setVisible(false);
             cajero.activarOtraOperacion();
@@ -190,4 +202,6 @@ public class RecargarTelefono extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+
 }
