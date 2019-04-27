@@ -110,6 +110,7 @@ public class IngresarDinero extends javax.swing.JPanel {
             this.controller.moverSaldo(numeroCuenta, ingresar,"INGRESO");
             //System.out.println(this.controller.getSaldo(numeroCuenta));
             this.setVisible(false);
+            jTextField1.setText(null);
             this.cajero.activarOtraOperacion();
             jTextField1.setText("");
         }

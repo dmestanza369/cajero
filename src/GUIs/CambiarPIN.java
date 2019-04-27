@@ -36,15 +36,12 @@ public class CambiarPIN extends javax.swing.JPanel {
         
         jLabel2.setFont(Consolas12);
         jLabel2.setText("PIN actual");
-        jTextField1.setFont(Consolas12);
         
         jLabel3.setFont(Consolas12);
         jLabel3.setText("Nuevo PIN");
-        jTextField2.setFont(Consolas12);
         
         jLabel4.setFont(Consolas12);
         jLabel4.setText("Confirmar nuevo PIN");
-        jTextField3.setFont(Consolas12);
         
         jButton1.setFont(Consolas12);
         jButton1.setText("Aceptar");
@@ -68,13 +65,13 @@ public class CambiarPIN extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
         jPanel11 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jPasswordField2 = new javax.swing.JPasswordField();
         jPanel16 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jPasswordField3 = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
@@ -101,27 +98,33 @@ public class CambiarPIN extends javax.swing.JPanel {
         jLabel2.setText("jLabel2");
         jPanel7.add(jLabel2);
 
-        jTextField1.setMinimumSize(new java.awt.Dimension(100, 24));
-        jTextField1.setPreferredSize(new java.awt.Dimension(100, 24));
-        jPanel7.add(jTextField1);
+        jPasswordField1.setMinimumSize(new java.awt.Dimension(100, 24));
+        jPasswordField1.setPreferredSize(new java.awt.Dimension(100, 24));
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jPasswordField1);
 
         jPanel2.add(jPanel7);
 
         jLabel3.setText("jLabel2");
         jPanel11.add(jLabel3);
 
-        jTextField2.setMinimumSize(new java.awt.Dimension(100, 24));
-        jTextField2.setPreferredSize(new java.awt.Dimension(100, 24));
-        jPanel11.add(jTextField2);
+        jPasswordField2.setMinimumSize(new java.awt.Dimension(100, 24));
+        jPasswordField2.setPreferredSize(new java.awt.Dimension(100, 24));
+        jPanel11.add(jPasswordField2);
 
         jPanel2.add(jPanel11);
 
         jLabel4.setText("jLabel2");
         jPanel16.add(jLabel4);
 
-        jTextField3.setMinimumSize(new java.awt.Dimension(100, 24));
-        jTextField3.setPreferredSize(new java.awt.Dimension(100, 24));
-        jPanel16.add(jTextField3);
+        jPasswordField3.setMinimumSize(new java.awt.Dimension(100, 24));
+        jPasswordField3.setPreferredSize(new java.awt.Dimension(100, 24));
+        jPasswordField3.setVerifyInputWhenFocusTarget(false);
+        jPanel16.add(jPasswordField3);
 
         jPanel2.add(jPanel16);
 
@@ -149,11 +152,17 @@ public class CambiarPIN extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
-        if(this.controller.getPin(numeroCuenta) == Integer.parseInt(jTextField1.getText())){
-            if(jTextField2.getText().equals(jTextField3.getText())){
-                if(this.controller.isPINUnique(Integer.parseInt(jTextField3.getText()))){
-                    this.controller.setPin(numeroCuenta, Integer.parseInt(jTextField3.getText()));            
+        int contraseña1= Integer.parseInt(String.valueOf(jPasswordField1.getPassword()) );
+        int contraseña2= Integer.parseInt(String.valueOf(jPasswordField2.getPassword()) );
+        int contraseña3= Integer.parseInt(String.valueOf(jPasswordField3.getPassword()) );
+        if(this.controller.getPin(numeroCuenta) == contraseña1){
+            if(contraseña3 == contraseña2){
+                if(this.controller.isPINUnique(contraseña3)){
+                    this.controller.setPin(numeroCuenta, contraseña3);            
                     this.setVisible(false);
+                    jPasswordField1.setText(null);
+                    jPasswordField2.setText(null);
+                    jPasswordField3.setText(null);
                     cajero.activarOtraOperacion();
                 } else JOptionPane.showMessageDialog(this, "Este PIN ya existe.");
             } else JOptionPane.showMessageDialog(this, "Los campos no coinciden.");
@@ -161,6 +170,10 @@ public class CambiarPIN extends javax.swing.JPanel {
         
             
     }//GEN-LAST:event_jButton1MousePressed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -181,8 +194,8 @@ public class CambiarPIN extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPasswordField2;
+    private javax.swing.JPasswordField jPasswordField3;
     // End of variables declaration//GEN-END:variables
 }

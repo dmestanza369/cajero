@@ -106,16 +106,24 @@ public class SacarDinero extends javax.swing.JPanel {
         double sacar = 0;
         if(jTextField1.getText() != "") sacar = -Double.parseDouble(jTextField1.getText());
         int OK = 0;
-        if (this.controller.haySaldo(numeroCuenta, -sacar)){
-            OK = this.controller.moverSaldo(numeroCuenta, sacar,"RETIRADA EN EFECTIVO");//el this puede que sobre
-            if (OK == -1) JOptionPane.showMessageDialog(this, "ERROR");
-            else{
-                this.setVisible(false);
-                this.cajero.activarOtraOperacion();
+        double sacar2=-sacar;
+        if (sacar2<1){
+            JOptionPane.showMessageDialog(this, "Error: Imposible sacar "+sacar2+" euros" );
+
+        } 
+            else { if (this.controller.haySaldo(numeroCuenta, -sacar)){
+                OK = this.controller.moverSaldo(numeroCuenta, sacar,"RETIRADA EN EFECTIVO");//el this puede que sobre
+                if (OK == -1) JOptionPane.showMessageDialog(this, "ERROR");
+                else{
+                   this.setVisible(false);
+                   this.cajero.activarOtraOperacion();
+                }
             }
-        }
-        else JOptionPane.showMessageDialog(this, "ERROR: SALDO INSUFICIENTE");
-        jTextField1.setText("");
+            else JOptionPane.showMessageDialog(this, "ERROR: SALDO INSUFICIENTE");
+            
+            }
+        
+        jTextField1.setText(null);
     }//GEN-LAST:event_jButton1MouseClicked
 
 

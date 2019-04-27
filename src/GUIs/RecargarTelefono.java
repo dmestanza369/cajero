@@ -175,6 +175,9 @@ public class RecargarTelefono extends javax.swing.JPanel {
             if(this.controller.haySaldo(numerocuenta, -cantidad)){
                 this.controller.moverSaldo(numerocuenta, cantidad, "RECARGA A " + numerotelefono);
                 this.setVisible(false);
+                jTextField1.setText(null);
+                jTextField2.setText(null);
+                jTextField3.setText(null);
                 cajero.activarOtraOperacion();
             }
         }

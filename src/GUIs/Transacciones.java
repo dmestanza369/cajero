@@ -163,6 +163,10 @@ public class Transacciones extends javax.swing.JPanel {
                 this.controller.moverSaldo(numerocuenta, -dinero, "TRANSACCIÓN A " + destinatario);
                 //Dar dinero
                 this.controller.moverSaldo(destinatario, dinero, "TRANSACCIÓN DESDE " + numerocuenta);
+                this.setVisible(false);
+                jTextField5.setText(null);
+                jTextField6.setText(null);
+                cajero.activarOtraOperacion();
             }
         } else JOptionPane.showMessageDialog(this, "El destinatario no existe.");
     }//GEN-LAST:event_jButton1MousePressed

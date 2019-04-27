@@ -7,6 +7,7 @@ package GUIs;
 
 import Database.CajeroController;
 import java.awt.Font;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -152,11 +153,18 @@ public class Pagos extends javax.swing.JPanel {
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         double pagar = -Double.parseDouble(jTextField2.getText());
+        Integer pago = Integer.parseInt(jTextField2.getText());
+        if (pago<1){
+            JOptionPane.showMessageDialog(this, "Error: Imposible realizar un pago de "+pago+" euros" );
+        }else {
         if(this.controller.haySaldo(numeroCuenta, -pagar)){
             controller.moverSaldo(numeroCuenta, pagar, jComboBox1.getActionCommand());
             this.setVisible(false);
-            cajero.activarOtraOperacion();
-        }
+            jTextField2.setText(null);
+            cajero.activarOtraOperacion();           
+        } 
+    }
+        
     }//GEN-LAST:event_jButton1MousePressed
 
 
