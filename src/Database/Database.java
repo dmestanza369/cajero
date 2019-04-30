@@ -53,6 +53,15 @@ public class Database {
         return null;
     }
     
+    public int buscarCuentaNombre(String Nombre){
+        for (int i = 0; i < DATABASE.size(); i++){
+            if(DATABASE.get(i).getNombre()== Nombre){
+                return DATABASE.get(i).getNumerocuenta();
+            }
+        }
+        return -1;
+    }
+    
     public int moverSaldo(int numerocuenta, double cantidad, String concepto){
         for (int i = 0; i < DATABASE.size(); i++){
             if(DATABASE.get(i).getNumerocuenta() == numerocuenta){

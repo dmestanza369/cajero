@@ -166,13 +166,14 @@ public class Transacciones extends javax.swing.JPanel {
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         int destinatario = Integer.parseInt(jTextField5.getText());
+        int numerocuenta = this.numerocuenta;
         if (this.controller.existeCuenta(destinatario)){
             double dinero = Double.parseDouble(jTextField6.getText());
             if (this.controller.haySaldo(numerocuenta, dinero)){
                 //Quitar dinero
                 this.controller.moverSaldo(numerocuenta, -dinero, "Transacción a " + this.controller.getNombre(destinatario));
                 //Dar dinero
-                this.controller.moverSaldo(destinatario, dinero, "Transacción desde " + numerocuenta);
+                this.controller.moverSaldo(destinatario, dinero, "Transacción de " + this.controller.getNombre(numerocuenta));
                 this.setVisible(false);
                 jTextField5.setText(null);
                 jTextField6.setText(null);

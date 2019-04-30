@@ -54,4 +54,8 @@ public class CajeroController{
     public String getNombre(int cuenta){
         return DB.buscarCuenta(cuenta).getNombre();
     }
+    
+    public int getNumerocuenta (String nombre){
+        return DB.buscarCuentaNombre(nombre);
+    }
 }
