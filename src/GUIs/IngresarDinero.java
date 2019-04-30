@@ -26,16 +26,16 @@ public class IngresarDinero extends javax.swing.JPanel {
         this.controller = cajero.getController();
         
         //Fuentes
-        Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
-        Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
+        Font Consolas20 = new java.awt.Font("Consolas", 0, 20);
+        Font Consolas24 = new java.awt.Font("Consolas", 0, 24);
         
-        jLabel1.setFont(Consolas16);
-        jLabel1.setText("Ingresar dinero");
+        jLabel1.setFont(Consolas24);
+        jLabel1.setText("INGRESAR DINERO");
         
-        jButton1.setFont(Consolas12);
-        jButton1.setText("Aceptar");
+        jButton1.setFont(Consolas20);
+        jButton1.setText("ACEPTAR");
         
-        jTextField1.setFont(Consolas12);
+        jTextField1.setFont(Consolas20);
         jTextField1.setText("");
     }
 
@@ -78,8 +78,8 @@ public class IngresarDinero extends javax.swing.JPanel {
 
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("jTextField1");
-        jTextField1.setMinimumSize(new java.awt.Dimension(100, 24));
-        jTextField1.setPreferredSize(new java.awt.Dimension(100, 24));
+        jTextField1.setMinimumSize(new java.awt.Dimension(200, 50));
+        jTextField1.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel6.add(jTextField1);
 
         jPanel3.add(jPanel6, java.awt.BorderLayout.CENTER);
@@ -96,6 +96,7 @@ public class IngresarDinero extends javax.swing.JPanel {
 
         add(jPanel3, java.awt.BorderLayout.CENTER);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel2.add(jLabel1);
 

@@ -28,28 +28,27 @@ public class Transacciones extends javax.swing.JPanel {
         this.controller = cajero.getController();
         
         //Fuentes
-        Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
-        Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
+        Font Consolas20 = new java.awt.Font("Consolas", 0, 20);
+        Font Consolas24 = new java.awt.Font("Consolas", 0, 24);
         
-        jLabel1.setFont(Consolas16);
-        jLabel1.setText("Transacciones");
+        jLabel1.setFont(Consolas24);
+        jLabel1.setText("TRANSACCIONES");
         
-        jLabel6.setFont(Consolas12);
-        jLabel6.setText("Destinatario (número de cuenta)");
+        jLabel6.setFont(Consolas20);
+        jLabel6.setText("DESTINATARIO (NUMERO DE CUENTA)");
         
-        jLabel7.setFont(Consolas12);
-        jLabel7.setText("Cantidad");
+        jLabel7.setFont(Consolas20);
+        jLabel7.setText("CANTIDAD");     
+        jLabel8.setFont(Consolas20);
+        jLabel8.setText("CONCEPTO");
         
-        jLabel8.setFont(Consolas12);
-        jLabel8.setText("Concepto");
+        jButton1.setFont(Consolas20);
+        jButton1.setText("ACEPTAR");
         
-        jButton1.setFont(Consolas12);
-        jButton1.setText("Aceptar");
-        
-        jComboBox1.setFont(Consolas12);
+        jComboBox1.setFont(Consolas20);
         jComboBox1.addItem("VIAJE");
         jComboBox1.addItem("REGALO");
-        jComboBox1.addItem("PRÉSTAMO");
+        jComboBox1.addItem("PRESTAMO");
         jComboBox1.addItem("OTROS");
         
     }
@@ -106,9 +105,9 @@ public class Transacciones extends javax.swing.JPanel {
         jLabel6.setText("jLabel6");
         jPanel11.add(jLabel6);
 
-        jTextField5.setMinimumSize(new java.awt.Dimension(100, 24));
+        jTextField5.setMinimumSize(new java.awt.Dimension(200, 50));
         jTextField5.setName(""); // NOI18N
-        jTextField5.setPreferredSize(new java.awt.Dimension(100, 24));
+        jTextField5.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel11.add(jTextField5);
 
         jPanel2.add(jPanel11);
@@ -116,8 +115,8 @@ public class Transacciones extends javax.swing.JPanel {
         jLabel7.setText("jLabel7");
         jPanel16.add(jLabel7);
 
-        jTextField6.setMinimumSize(new java.awt.Dimension(100, 24));
-        jTextField6.setPreferredSize(new java.awt.Dimension(100, 24));
+        jTextField6.setMinimumSize(new java.awt.Dimension(200, 50));
+        jTextField6.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel16.add(jTextField6);
 
         jPanel2.add(jPanel16);
@@ -126,7 +125,7 @@ public class Transacciones extends javax.swing.JPanel {
         jPanel12.add(jLabel8);
 
         jComboBox1.setMinimumSize(new java.awt.Dimension(100, 24));
-        jComboBox1.setPreferredSize(new java.awt.Dimension(100, 24));
+        jComboBox1.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel12.add(jComboBox1);
 
         jPanel2.add(jPanel12);

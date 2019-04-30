@@ -72,7 +72,7 @@
                   <Dimension value="[100, 24]"/>
                 </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[100, 24]"/>
+                  <Dimension value="[100, 30]"/>
                 </Property>
               </Properties>
               <Events>
@@ -96,7 +96,7 @@
                   <Dimension value="[100, 24]"/>
                 </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[100, 24]"/>
+                  <Dimension value="[100, 30]"/>
                 </Property>
               </Properties>
             </Component>
@@ -117,7 +117,7 @@
                   <Dimension value="[100, 24]"/>
                 </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[100, 24]"/>
+                  <Dimension value="[100, 30]"/>
                 </Property>
                 <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
               </Properties>

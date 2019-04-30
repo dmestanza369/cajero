@@ -28,32 +28,32 @@ public class Pagos extends javax.swing.JPanel {
         this.controller = cajero.getController();
         
         //Fuentes
-        Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
-        Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
+        Font Consolas20 = new java.awt.Font("Consolas", 0, 20);
+        Font Consolas24 = new java.awt.Font("Consolas", 0, 24);
         
-        jLabel1.setFont(Consolas16);
-        jLabel1.setText("Pagos");
+        jLabel1.setFont(Consolas24);
+        jLabel1.setText("PAGOS");
         
-        jLabel2.setFont(Consolas12);
-        jLabel2.setText("Concepto");
+        jLabel2.setFont(Consolas20);
+        jLabel2.setText("CONCEPTO");
         
-        jLabel3.setFont(Consolas12);
-        jLabel3.setText("Cantidad");
+        jLabel3.setFont(Consolas20);
+        jLabel3.setText("CANTIDAD");
         
-        jTextField2.setFont(Consolas12);
+        jTextField2.setFont(Consolas20);
         jTextField2.setText("");
         
-        jButton1.setFont(Consolas12);
-        jButton1.setText("Pagar");
+        jButton1.setFont(Consolas20);
+        jButton1.setText("PAGAR");
         
-        jComboBox1.setFont(Consolas12);
+        jComboBox1.setFont(Consolas20);
         jComboBox1.addItem("IMPUESTOS");
         jComboBox1.addItem("LUZ");
         jComboBox1.addItem("AGUA");
         jComboBox1.addItem("GAS");
         jComboBox1.addItem("MULTA");
         
-        jTextField2.setFont(Consolas12);
+        jTextField2.setFont(Consolas20);
     }
 
     /**
@@ -106,7 +106,7 @@ public class Pagos extends javax.swing.JPanel {
         jPanel7.add(jLabel2);
 
         jComboBox1.setMinimumSize(new java.awt.Dimension(100, 24));
-        jComboBox1.setPreferredSize(new java.awt.Dimension(100, 24));
+        jComboBox1.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel7.add(jComboBox1);
 
         jPanel2.add(jPanel7);
@@ -118,7 +118,7 @@ public class Pagos extends javax.swing.JPanel {
 
         jTextField2.setText("jTextField2");
         jTextField2.setMinimumSize(new java.awt.Dimension(100, 24));
-        jTextField2.setPreferredSize(new java.awt.Dimension(100, 24));
+        jTextField2.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel9.add(jTextField2);
 
         jPanel11.add(jPanel9);

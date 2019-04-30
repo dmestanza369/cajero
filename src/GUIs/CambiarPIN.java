@@ -28,23 +28,23 @@ public class CambiarPIN extends javax.swing.JPanel {
         this.controller = cajero.getController();
         
         //Fuentes
-        Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
-        Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
+        Font Consolas20 = new java.awt.Font("Consolas", 0, 20);
+        Font Consolas24 = new java.awt.Font("Consolas", 0, 24);
         
-        jLabel1.setFont(Consolas16);
-        jLabel1.setText("Cambiar PIN");
+        jLabel1.setFont(Consolas24);
+        jLabel1.setText("CAMBIAR PIN");
         
-        jLabel2.setFont(Consolas12);
-        jLabel2.setText("PIN actual");
+        jLabel2.setFont(Consolas20);
+        jLabel2.setText("PIN ACTUAL");
         
-        jLabel3.setFont(Consolas12);
-        jLabel3.setText("Nuevo PIN");
+        jLabel3.setFont(Consolas20);
+        jLabel3.setText("NUEVO PIN");
         
-        jLabel4.setFont(Consolas12);
-        jLabel4.setText("Confirmar nuevo PIN");
+        jLabel4.setFont(Consolas20);
+        jLabel4.setText("CONFIRMAR NUEVO PIN");
         
-        jButton1.setFont(Consolas12);
-        jButton1.setText("Aceptar");
+        jButton1.setFont(Consolas20);
+        jButton1.setText("ACEPTAR");
     
     }
 
@@ -99,7 +99,7 @@ public class CambiarPIN extends javax.swing.JPanel {
         jPanel7.add(jLabel2);
 
         jPasswordField1.setMinimumSize(new java.awt.Dimension(100, 24));
-        jPasswordField1.setPreferredSize(new java.awt.Dimension(100, 24));
+        jPasswordField1.setPreferredSize(new java.awt.Dimension(100, 30));
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField1ActionPerformed(evt);
@@ -113,7 +113,7 @@ public class CambiarPIN extends javax.swing.JPanel {
         jPanel11.add(jLabel3);
 
         jPasswordField2.setMinimumSize(new java.awt.Dimension(100, 24));
-        jPasswordField2.setPreferredSize(new java.awt.Dimension(100, 24));
+        jPasswordField2.setPreferredSize(new java.awt.Dimension(100, 30));
         jPanel11.add(jPasswordField2);
 
         jPanel2.add(jPanel11);
@@ -122,7 +122,7 @@ public class CambiarPIN extends javax.swing.JPanel {
         jPanel16.add(jLabel4);
 
         jPasswordField3.setMinimumSize(new java.awt.Dimension(100, 24));
-        jPasswordField3.setPreferredSize(new java.awt.Dimension(100, 24));
+        jPasswordField3.setPreferredSize(new java.awt.Dimension(100, 30));
         jPasswordField3.setVerifyInputWhenFocusTarget(false);
         jPanel16.add(jPasswordField3);
 

@@ -26,16 +26,15 @@ public class Movimientos extends javax.swing.JPanel {
         this.numeroCuenta = cuenta;
         this.controller = cajero.getController();
         //Fuentes
-        Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
-        Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
+        Font Consolas20 = new java.awt.Font("Consolas", 0, 20);
+        Font Consolas24 = new java.awt.Font("Consolas", 0, 24);
         
-        jLabel1.setFont(Consolas16);
-        jLabel1.setText("Movimientos");
+        jLabel1.setFont(Consolas24);
+        jLabel1.setText("MOVIMIENTOS");
         
-        jButton1.setFont(Consolas12);
-        jButton1.setText("Aceptar");
-        
-        jTextArea1.setFont(Consolas12);
+        jButton1.setFont(Consolas20);
+        jButton1.setText("ACEPTAR");
+        jTextArea1.setFont(Consolas20);
         jTextArea1.setEditable(false);
     }
     

@@ -29,35 +29,35 @@ public class RecargarTelefono extends javax.swing.JPanel {
         this.controller = cajero.getController();
         
         //Fuentes
-        Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
-        Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
+        Font Consolas20 = new java.awt.Font("Consolas", 0, 20);
+        Font Consolas24 = new java.awt.Font("Consolas", 0, 24);
         
-        jLabel5.setFont(Consolas16);
-        jLabel5.setText("Recargar teléfono");
+        jLabel5.setFont(Consolas24);
+        jLabel5.setText("RECARGAR TELEFONO");
         
         
-        jLabel1.setFont(Consolas12);
-        jLabel1.setText("Número de teléfono");
+        jLabel1.setFont(Consolas20);
+        jLabel1.setText("NUMERO DE TELEFONO");
         
-        jLabel2.setFont(Consolas12);
-        jLabel2.setText("Cantidad");
+        jLabel2.setFont(Consolas20);
+        jLabel2.setText("CANTIDAD");
         
-        jLabel3.setFont(Consolas12);
-        jLabel3.setText("Número de confirmación");
+        jLabel3.setFont(Consolas20);
+        jLabel3.setText("NUMERO DE CONFIRMACION");
         
-        jButton1.setFont(Consolas12);
-        jButton1.setText("Aceptar");
+        jButton1.setFont(Consolas20);
+        jButton1.setText("ACEPTAR");
         
-        jButton2.setFont(Consolas12);
-        jButton2.setText("Confirmar");
+        jButton2.setFont(Consolas20);
+        jButton2.setText("CONFIRMAR");
         
-        jTextField1.setFont(Consolas12);
+        jTextField1.setFont(Consolas20);
         jTextField1.setText("");
         
-        jTextField2.setFont(Consolas12);
+        jTextField2.setFont(Consolas20);
         jTextField2.setText("");
         
-        jTextField3.setFont(Consolas12);
+        jTextField3.setFont(Consolas20);
         jTextField3.setText("");
     }
     
@@ -100,8 +100,9 @@ public class RecargarTelefono extends javax.swing.JPanel {
         jLabel1.setText("jLabel1");
         jPanel2.add(jLabel1);
 
-        jTextField1.setMinimumSize(new java.awt.Dimension(100, 24));
-        jTextField1.setPreferredSize(new java.awt.Dimension(100, 24));
+        jTextField1.setMinimumSize(new java.awt.Dimension(200, 24));
+        jTextField1.setName(""); // NOI18N
+        jTextField1.setPreferredSize(new java.awt.Dimension(200, 50));
         jPanel2.add(jTextField1);
 
         add(jPanel2);
@@ -110,7 +111,7 @@ public class RecargarTelefono extends javax.swing.JPanel {
         jPanel3.add(jLabel2);
 
         jTextField2.setMinimumSize(new java.awt.Dimension(100, 24));
-        jTextField2.setPreferredSize(new java.awt.Dimension(100, 24));
+        jTextField2.setPreferredSize(new java.awt.Dimension(200, 50));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -134,7 +135,7 @@ public class RecargarTelefono extends javax.swing.JPanel {
         jPanel5.add(jLabel3);
 
         jTextField3.setMinimumSize(new java.awt.Dimension(100, 24));
-        jTextField3.setPreferredSize(new java.awt.Dimension(100, 24));
+        jTextField3.setPreferredSize(new java.awt.Dimension(200, 50));
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);

@@ -29,50 +29,51 @@ public class MenuPrincipal extends javax.swing.JPanel{
         
         
         //Fuentes
-        Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
-        Font Consolas16 = new java.awt.Font("Consolas", 0, 16);
+        Font Consolas20 = new java.awt.Font("Consolas", 0, 20);
+        Font Consolas24 = new java.awt.Font("Consolas", 0, 24);
+        Font Consolas30 = new java.awt.Font("Consolas", 0, 30);       
 
-        jLabel9.setFont(Consolas16);
-        jLabel9.setText("Selecciona una opción");
+        jLabel9.setFont(Consolas30);
+        jLabel9.setText("SELECIONA UNA OPCION");
 
-        jLabel1.setFont(Consolas12);
-        jLabel1.setText("Ingresar dinero");
-        jButton1.setFont(Consolas12);
+        jLabel1.setFont(Consolas24);
+        jLabel1.setText("INGRESAR DINERO");
+        jButton1.setFont(Consolas20);
         jButton1.setText("1");
 
-        jLabel10.setFont(Consolas12);
-        jLabel10.setText("Sacar dinero");
-        jButton2.setFont(Consolas12);
+        jLabel10.setFont(Consolas24);
+        jLabel10.setText("SACAR DINERO");
+        jButton2.setFont(Consolas20);
         jButton2.setText("2");
 
-        jLabel11.setFont(Consolas12);
-        jLabel11.setText("Transacciones");
-        jButton3.setFont(Consolas12);
+        jLabel11.setFont(Consolas24);
+        jLabel11.setText("TRANSACCIONES");
+        jButton3.setFont(Consolas20);
         jButton3.setText("3");
 
-        jLabel12.setFont(Consolas12);
-        jLabel12.setText("Movimientos");
-        jButton4.setFont(Consolas12);
+        jLabel12.setFont(Consolas24);
+        jLabel12.setText("MOVIMIENTOS");
+        jButton4.setFont(Consolas20);
         jButton4.setText("4");
 
-        jLabel13.setFont(Consolas12);
-        jLabel13.setText("Pagos");
-        jButton5.setFont(Consolas12);
+        jLabel13.setFont(Consolas24);
+        jLabel13.setText("PAGOS");
+        jButton5.setFont(Consolas20);
         jButton5.setText("5");
 
-        jLabel14.setFont(Consolas12);
-        jLabel14.setText("Cambiar PIN");
-        jButton6.setFont(Consolas12);
+        jLabel14.setFont(Consolas24);
+        jLabel14.setText("CAMBIAR PIN");
+        jButton6.setFont(Consolas20);
         jButton6.setText("6");
 
-        jLabel15.setFont(Consolas12);
-        jLabel15.setText("Recargar teléfono");
-        jButton7.setFont(Consolas12);
+        jLabel15.setFont(Consolas24);
+        jLabel15.setText("RECARGAR TELEFONO");
+        jButton7.setFont(Consolas20);
         jButton7.setText("7");
 
-        jLabel16.setFont(Consolas12);
-        jLabel16.setText("Sacar tarjeta");
-        jButton8.setFont(Consolas12);
+        jLabel16.setFont(Consolas24);
+        jLabel16.setText("SACAR TARJETA");
+        jButton8.setFont(Consolas20);
         jButton8.setText("8");
     }
 
@@ -135,6 +136,8 @@ public class MenuPrincipal extends javax.swing.JPanel{
         setPreferredSize(new java.awt.Dimension(1000, 600));
         setLayout(new java.awt.GridLayout(5, 0));
 
+        jLabel9.setFont(new java.awt.Font("Consolas", 0, 30)); // NOI18N
+        jLabel9.setText("Selecciona una opción");
         jPanel1.add(jLabel9);
 
         add(jPanel1);
@@ -142,9 +145,18 @@ public class MenuPrincipal extends javax.swing.JPanel{
         jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel6.setLayout(new java.awt.GridLayout(1, 0));
+
+        jLabel1.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jLabel1.setText("Ingresar dinero");
         jPanel8.add(jLabel1);
 
         jPanel6.add(jPanel8);
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setText("1");
+        jButton1.setMaximumSize(new java.awt.Dimension(70, 50));
+        jButton1.setMinimumSize(new java.awt.Dimension(70, 50));
+        jButton1.setPreferredSize(new java.awt.Dimension(70, 50));
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton1MousePressed(evt);
@@ -158,6 +170,11 @@ public class MenuPrincipal extends javax.swing.JPanel{
 
         jPanel7.setLayout(new java.awt.GridLayout(1, 0));
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton2.setText("2");
+        jButton2.setMaximumSize(new java.awt.Dimension(70, 50));
+        jButton2.setMinimumSize(new java.awt.Dimension(70, 50));
+        jButton2.setPreferredSize(new java.awt.Dimension(70, 50));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton2MousePressed(evt);
@@ -167,6 +184,8 @@ public class MenuPrincipal extends javax.swing.JPanel{
 
         jPanel7.add(jPanel16);
 
+        jLabel10.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jLabel10.setText("Retirar dinero");
         jPanel17.add(jLabel10);
 
         jPanel7.add(jPanel17);
@@ -179,10 +198,17 @@ public class MenuPrincipal extends javax.swing.JPanel{
 
         jPanel19.setLayout(new java.awt.GridLayout(1, 0));
 
+        jLabel11.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jLabel11.setText("Transacciones");
         jPanel20.add(jLabel11);
 
         jPanel19.add(jPanel20);
 
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton3.setText("3");
+        jButton3.setMaximumSize(new java.awt.Dimension(70, 50));
+        jButton3.setMinimumSize(new java.awt.Dimension(70, 50));
+        jButton3.setPreferredSize(new java.awt.Dimension(70, 50));
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton3MousePressed(evt);
@@ -196,6 +222,11 @@ public class MenuPrincipal extends javax.swing.JPanel{
 
         jPanel22.setLayout(new java.awt.GridLayout(1, 0));
 
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton4.setText("4");
+        jButton4.setMaximumSize(new java.awt.Dimension(70, 50));
+        jButton4.setMinimumSize(new java.awt.Dimension(70, 50));
+        jButton4.setPreferredSize(new java.awt.Dimension(70, 50));
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton4MousePressed(evt);
@@ -205,6 +236,8 @@ public class MenuPrincipal extends javax.swing.JPanel{
 
         jPanel22.add(jPanel23);
 
+        jLabel12.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jLabel12.setText("Movimientos");
         jPanel24.add(jLabel12);
 
         jPanel22.add(jPanel24);
@@ -217,10 +250,17 @@ public class MenuPrincipal extends javax.swing.JPanel{
 
         jPanel26.setLayout(new java.awt.GridLayout(1, 0));
 
+        jLabel13.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jLabel13.setText("Pagos");
         jPanel27.add(jLabel13);
 
         jPanel26.add(jPanel27);
 
+        jButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton5.setText("5");
+        jButton5.setMaximumSize(new java.awt.Dimension(70, 50));
+        jButton5.setMinimumSize(new java.awt.Dimension(70, 50));
+        jButton5.setPreferredSize(new java.awt.Dimension(70, 50));
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton5MousePressed(evt);
@@ -234,6 +274,11 @@ public class MenuPrincipal extends javax.swing.JPanel{
 
         jPanel29.setLayout(new java.awt.GridLayout(1, 0));
 
+        jButton6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton6.setText("6");
+        jButton6.setMaximumSize(new java.awt.Dimension(70, 50));
+        jButton6.setMinimumSize(new java.awt.Dimension(70, 50));
+        jButton6.setPreferredSize(new java.awt.Dimension(70, 50));
         jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton6MousePressed(evt);
@@ -243,6 +288,8 @@ public class MenuPrincipal extends javax.swing.JPanel{
 
         jPanel29.add(jPanel30);
 
+        jLabel14.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jLabel14.setText("Cambiar PIN");
         jPanel31.add(jLabel14);
 
         jPanel29.add(jPanel31);
@@ -255,10 +302,17 @@ public class MenuPrincipal extends javax.swing.JPanel{
 
         jPanel33.setLayout(new java.awt.GridLayout(1, 0));
 
+        jLabel15.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jLabel15.setText("Recargar teléfono");
         jPanel34.add(jLabel15);
 
         jPanel33.add(jPanel34);
 
+        jButton7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton7.setText("7");
+        jButton7.setMaximumSize(new java.awt.Dimension(70, 50));
+        jButton7.setMinimumSize(new java.awt.Dimension(70, 50));
+        jButton7.setPreferredSize(new java.awt.Dimension(70, 50));
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton7MousePressed(evt);
@@ -272,6 +326,11 @@ public class MenuPrincipal extends javax.swing.JPanel{
 
         jPanel36.setLayout(new java.awt.GridLayout(1, 0));
 
+        jButton8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton8.setText("8");
+        jButton8.setMaximumSize(new java.awt.Dimension(70, 50));
+        jButton8.setMinimumSize(new java.awt.Dimension(70, 50));
+        jButton8.setPreferredSize(new java.awt.Dimension(70, 50));
         jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton8MousePressed(evt);
@@ -281,6 +340,8 @@ public class MenuPrincipal extends javax.swing.JPanel{
 
         jPanel36.add(jPanel37);
 
+        jLabel16.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jLabel16.setText("Sacar tarjeta");
         jPanel38.add(jLabel16);
 
         jPanel36.add(jPanel38);

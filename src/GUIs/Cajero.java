@@ -39,14 +39,14 @@ public class Cajero extends javax.swing.JFrame {
         this.setVisible(true);
  
         //Fuentes
-        Font Consolas12 = new java.awt.Font("Consolas", 0, 12);
+        Font Consolas20 = new java.awt.Font("Consolas", 0, 20);
         Font Consolas24 = new java.awt.Font("Consolas", 0, 24);
         
         initComponents();
         this.setSize(1000, 600);
         
         //Versión
-        jLabel2.setFont(Consolas12);
+        jLabel2.setFont(Consolas20);
         jLabel2.setText("Versión 1.0");
         
         //PIN
@@ -56,8 +56,8 @@ public class Cajero extends javax.swing.JFrame {
         jPasswordField1.setEchoChar('*');
         jPasswordField1.setText("");
         
-        jButton1.setFont(Consolas12);
-        jButton1.setText("Aceptar");
+        jButton1.setFont(Consolas20);
+        jButton1.setText("ACEPTAR");
     }
 
     /**
