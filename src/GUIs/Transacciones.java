@@ -51,6 +51,12 @@ public class Transacciones extends javax.swing.JPanel {
         jComboBox1.addItem("PRESTAMO");
         jComboBox1.addItem("OTROS");
         
+        jTextField5.setFont(Consolas20);
+        jTextField5.setText("");
+        
+        jTextField6.setFont(Consolas20);
+        jTextField6.setText("");
+        
     }
 
     /**
@@ -108,6 +114,11 @@ public class Transacciones extends javax.swing.JPanel {
         jTextField5.setMinimumSize(new java.awt.Dimension(200, 50));
         jTextField5.setName(""); // NOI18N
         jTextField5.setPreferredSize(new java.awt.Dimension(200, 50));
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
         jPanel11.add(jTextField5);
 
         jPanel2.add(jPanel11);
@@ -159,9 +170,9 @@ public class Transacciones extends javax.swing.JPanel {
             double dinero = Double.parseDouble(jTextField6.getText());
             if (this.controller.haySaldo(numerocuenta, dinero)){
                 //Quitar dinero
-                this.controller.moverSaldo(numerocuenta, -dinero, "TRANSACCIÓN A " + destinatario);
+                this.controller.moverSaldo(numerocuenta, -dinero, "Transacción a " + this.controller.getNombre(destinatario));
                 //Dar dinero
-                this.controller.moverSaldo(destinatario, dinero, "TRANSACCIÓN DESDE " + numerocuenta);
+                this.controller.moverSaldo(destinatario, dinero, "Transacción desde " + numerocuenta);
                 this.setVisible(false);
                 jTextField5.setText(null);
                 jTextField6.setText(null);
@@ -169,6 +180,10 @@ public class Transacciones extends javax.swing.JPanel {
             }
         } else JOptionPane.showMessageDialog(this, "El destinatario no existe.");
     }//GEN-LAST:event_jButton1MousePressed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

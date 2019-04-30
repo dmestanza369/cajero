@@ -152,17 +152,36 @@ public class Pagos extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+       int opcion = jComboBox1.getSelectedIndex();
+       String concepto="";
+       switch (opcion) {
+            case 0:
+            concepto="IMPUESTOS";
+            break;
+            case 1:
+            concepto="LUZ";
+            break;
+            case 2:
+            concepto="AGUA";
+            break;
+            case 3:
+            concepto="GAS";
+            break;
+            case 4:
+            concepto="MULTA";
+            break;
+       }
         double pagar = -Double.parseDouble(jTextField2.getText());
         Integer pago = Integer.parseInt(jTextField2.getText());
         if (pago<1){
             JOptionPane.showMessageDialog(this, "Error: Imposible realizar un pago de "+pago+" euros" );
         }else {
         if(this.controller.haySaldo(numeroCuenta, -pagar)){
-            controller.moverSaldo(numeroCuenta, pagar, jComboBox1.getActionCommand());
+            controller.moverSaldo(numeroCuenta, pagar,concepto);
             this.setVisible(false);
             jTextField2.setText(null);
             cajero.activarOtraOperacion();           
-        } 
+        }  else JOptionPane.showMessageDialog(this, "ERROR: SALDO INSUFICIENTE");
     }
         
     }//GEN-LAST:event_jButton1MousePressed

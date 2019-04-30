@@ -115,21 +115,24 @@ public class Cajero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
-        if (jPasswordField1.getPassword().length == 4){
-            char[] textoC = jPasswordField1.getPassword();
-            String contraseña = new String(textoC);
-            PIN = Integer.parseInt(contraseña);
-        }
-        numerocuentaactiva = this.controller.validaPin(PIN);
-        setCuentas();
-        jPasswordField1.setText("");
+        if(jPasswordField1.getPassword().length == 0){
+            JOptionPane.showMessageDialog(this, "ERROR: Debe escribir algún PIN");
+        }else {      
+            if (jPasswordField1.getPassword().length == 4){
+                char[] textoC = jPasswordField1.getPassword();
+                String contraseña = new String(textoC);
+                PIN = Integer.parseInt(contraseña);
+            }
+            numerocuentaactiva = this.controller.validaPin(PIN);
+            setCuentas();
+            jPasswordField1.setText("");
         
-        if (numerocuentaactiva != -1){
+            if (numerocuentaactiva != -1){
                 this.jPanel2.setVisible(false);
                 this.jPanel3.setVisible(false);
                 this.jPanel4.setVisible(false);
                 menuprincipal.setVisible(true);
-        } else JOptionPane.showMessageDialog(this, "ERROR: PIN inexistente o no es un número");
+        } else JOptionPane.showMessageDialog(this, "ERROR: PIN inexistente o no es un número"); }    
     }//GEN-LAST:event_jButton1MousePressed
 
     private void setCuentas() {

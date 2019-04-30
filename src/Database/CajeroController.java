@@ -5,7 +5,6 @@
  */
 package Database;
 
-import Scripts.Cuenta;
 import Database.Database;
 
 /**
@@ -51,5 +50,8 @@ public class CajeroController{
     public boolean haySaldo(int numerocuenta, double retirada){
         return getSaldo(numerocuenta) > retirada;
     }
-
+    
+    public String getNombre(int cuenta){
+        return DB.buscarCuenta(cuenta).getNombre();
+    }
 }

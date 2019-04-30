@@ -8,6 +8,7 @@ package GUIs;
 import Database.CajeroController;
 import java.awt.Font;
 import javax.swing.JOptionPane;
+import Scripts.Cuenta;
 
 /**
  *
@@ -159,13 +160,20 @@ public class RecargarTelefono extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        int cuenta=0;
+        cuenta = this.numerocuenta;
         Integer numerotelefono = Integer.parseInt(jTextField1.getText()); 
         int numeros = Integer.toString(numerotelefono).length();
-        if(numeros == 9 && numerotelefono >= 600000000 && numerotelefono <= 799999999){
-            numeroconfirmacion = getNumConfirmacion();
-            JOptionPane.showMessageDialog(this, "Número de confirmación: " + numeroconfirmacion);
-           
-        } else JOptionPane.showMessageDialog(this, "El número de telefono no existe");
+        Integer sacar = Integer.parseInt(jTextField2.getText());
+        boolean hayDinero = this.controller.haySaldo(cuenta, sacar);
+        if (hayDinero == false){
+            JOptionPane.showMessageDialog(this, "ERROR: SALDO INSUFICIENTE");   
+        }else {
+            if(numeros == 9 && numerotelefono >= 600000000 && numerotelefono <= 799999999){
+                numeroconfirmacion = getNumConfirmacion();
+                JOptionPane.showMessageDialog(this, "Número de confirmación: " + numeroconfirmacion);   
+            } else JOptionPane.showMessageDialog(this, "El número de telefono no existe");
+        }    
     }//GEN-LAST:event_jButton1MousePressed
 
     private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed

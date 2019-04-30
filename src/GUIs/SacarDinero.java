@@ -6,8 +6,6 @@
 package GUIs;
 
 import Database.CajeroController;
-import Scripts.Cuenta;
-
 import java.awt.Font;
 import javax.swing.JOptionPane;
 
@@ -105,7 +103,7 @@ public class SacarDinero extends javax.swing.JPanel {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         double sacar = 0;
         if(jTextField1.getText() != "") sacar = -Double.parseDouble(jTextField1.getText());
-        int OK = 0;
+        int OK;
         double sacar2=-sacar;
         if (sacar2<1){
             JOptionPane.showMessageDialog(this, "Error: Imposible sacar "+sacar2+" euros" );
