@@ -6,8 +6,6 @@
 package GUIs;
 
 import Database.CajeroController;
-import Scripts.Cuenta;
-
 import java.awt.Font;
 import javax.swing.JOptionPane;
 
@@ -22,6 +20,7 @@ public class Cajero extends javax.swing.JFrame {
     private int PIN = 0;
     private boolean isCorrect = false; 
     
+    //Creación paneles
     MenuPrincipal menuprincipal;
     OtraOperación otraoperacion;
     SacarDinero sacardinero;
@@ -34,7 +33,7 @@ public class Cajero extends javax.swing.JFrame {
     
     public Cajero() {
         this.controller = new CajeroController();
-
+        
         this.setTitle("Cajero"); //Título de la ventana
         this.setVisible(true);
  
@@ -56,6 +55,7 @@ public class Cajero extends javax.swing.JFrame {
         jPasswordField1.setEchoChar('*');
         jPasswordField1.setText("");
         
+        //Botón de aceptación
         jButton1.setFont(Consolas20);
         jButton1.setText("ACEPTAR");
     }
@@ -115,37 +115,42 @@ public class Cajero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
-        if(jPasswordField1.getPassword().length == 0){
-            JOptionPane.showMessageDialog(this, "ERROR: Debe escribir algún PIN");
-        }else {      
-            if (jPasswordField1.getPassword().length == 4){
-                char[] textoC = jPasswordField1.getPassword();
-                String contraseña = new String(textoC);
-                PIN = Integer.parseInt(contraseña);
-            }
+        if(jPasswordField1.getPassword().length == 4){
+            
+            //Convierte el PIN a número
+            char[] textoC = jPasswordField1.getPassword();
+            String contraseña = new String(textoC);
+            PIN = Integer.parseInt(contraseña);
+            
+            //Encuentra la cuenta según el PIN
             numerocuentaactiva = this.controller.validaPin(PIN);
-            setCuentas();
+            setPanels();
             jPasswordField1.setText("");
-        
+            
+            //Activa menú principal
             if (numerocuentaactiva != -1){
                 this.jPanel2.setVisible(false);
                 this.jPanel3.setVisible(false);
                 this.jPanel4.setVisible(false);
                 menuprincipal.setVisible(true);
-        } else JOptionPane.showMessageDialog(this, "ERROR: PIN inexistente o no es un número"); }    
+            } else JOptionPane.showMessageDialog(this, "ERROR: PIN inexistente o no es un número");
+            
+        } else JOptionPane.showMessageDialog(this, "ERROR: La longitud del PIN es 4.");  
     }//GEN-LAST:event_jButton1MousePressed
 
-    private void setCuentas() {
+    private void setPanels() {
+        //Guarda los paneles ya configurados
         this.menuprincipal = new MenuPrincipal(this);
         this.otraoperacion = new OtraOperación(this,numerocuentaactiva);
         this.sacardinero = new SacarDinero(this, numerocuentaactiva);
         this.ingresardinero = new IngresarDinero(this, numerocuentaactiva);
-        this.transacciones = new Transacciones(this,numerocuentaactiva);
+        this.transacciones = new Transacciones(this, numerocuentaactiva);
         this.cambiarpin = new CambiarPIN(this, numerocuentaactiva);
         this.pagos = new Pagos(this, numerocuentaactiva);
-        this.movimientos = new Movimientos(this,numerocuentaactiva);
-        this.recargartelefono = new RecargarTelefono(this,numerocuentaactiva);
+        this.movimientos = new Movimientos(this, numerocuentaactiva);
+        this.recargartelefono = new RecargarTelefono(this, numerocuentaactiva);
         
+        //Los añade al Cajero
         this.getContentPane().add(menuprincipal);
         this.getContentPane().add(otraoperacion);
         this.getContentPane().add(sacardinero);
@@ -210,6 +215,7 @@ public class Cajero extends javax.swing.JFrame {
     public CajeroController getController() {
         return controller;
     }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
