@@ -45,6 +45,10 @@ public class CambiarPIN extends javax.swing.JPanel {
         
         jButton1.setFont(Consolas20);
         jButton1.setText("ACEPTAR");
+        
+        jPasswordField1.setFont(Consolas20);
+        jPasswordField2.setFont(Consolas20);
+        jPasswordField3.setFont(Consolas20);
     
     }
 
@@ -164,7 +168,7 @@ public class CambiarPIN extends javax.swing.JPanel {
                     jPasswordField2.setText(null);
                     jPasswordField3.setText(null);
                     cajero.activarOtraOperacion();
-                } else JOptionPane.showMessageDialog(this, "Este PIN ya existe.");
+                } else JOptionPane.showMessageDialog(this, "Este PIN ya existe o es el mismo.");
             } else JOptionPane.showMessageDialog(this, "Los campos no coinciden.");
         } else JOptionPane.showMessageDialog(this, "PIN incorrecto.");
         
