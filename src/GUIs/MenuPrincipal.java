@@ -34,7 +34,7 @@ public class MenuPrincipal extends javax.swing.JPanel{
         Font Consolas30 = new java.awt.Font("Consolas", 0, 30);       
 
         jLabel9.setFont(Consolas30);
-        jLabel9.setText("SELECIONA UNA OPCION");
+        jLabel9.setText("SELECCIONE UNA OPCIÓN");
 
         jLabel1.setFont(Consolas24);
         jLabel1.setText("INGRESAR DINERO");
@@ -67,7 +67,7 @@ public class MenuPrincipal extends javax.swing.JPanel{
         jButton6.setText("6");
 
         jLabel15.setFont(Consolas24);
-        jLabel15.setText("RECARGAR TELEFONO");
+        jLabel15.setText("RECARGAR TELÉFONO");
         jButton7.setFont(Consolas20);
         jButton7.setText("7");
 
