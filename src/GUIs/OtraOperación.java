@@ -37,7 +37,7 @@ public class OtraOperación extends javax.swing.JPanel {
         jLabel1.setText("¿DESEA REALIZAR OTRA OPERACION?");
         
         jButton1.setFont(Consolas20);
-        jButton1.setText("SI");
+        jButton1.setText("SÍ");
         
         jButton2.setFont(Consolas20);
         jButton2.setText("NO");
