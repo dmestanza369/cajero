@@ -184,12 +184,14 @@ public class CambiarPIN extends javax.swing.JPanel {
         if(this.controller.getPin(numeroCuenta) == contraseña1){
             if(contraseña3 == contraseña2){
                 if(this.controller.isPINUnique(contraseña3)){
-                    this.controller.setPin(numeroCuenta, contraseña3);            
-                    this.setVisible(false);
-                    jPasswordField1.setText(null);
-                    jPasswordField2.setText(null);
-                    jPasswordField3.setText(null);
-                    cajero.activarOtraOperacion();
+                    if(contraseña2 == 4 && contraseña3 == 4){
+                        this.controller.setPin(numeroCuenta, contraseña3);            
+                        this.setVisible(false);
+                        jPasswordField1.setText(null);
+                        jPasswordField2.setText(null);
+                        jPasswordField3.setText(null);
+                        cajero.activarOtraOperacion();
+                    } else JOptionPane.showMessageDialog(this, "El nuevo PIN no tiene 4 digitos.");
                 } else JOptionPane.showMessageDialog(this, "Este PIN ya existe o es el mismo.");
             } else JOptionPane.showMessageDialog(this, "Los campos no coinciden.");
         } else JOptionPane.showMessageDialog(this, "PIN incorrecto.");
