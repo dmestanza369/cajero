@@ -191,16 +191,18 @@ public class Transacciones extends javax.swing.JPanel {
         int numerocuenta = this.numerocuenta;
         if (this.controller.existeCuenta(destinatario)){
             double dinero = Double.parseDouble(jTextField6.getText());
-            if (this.controller.haySaldo(numerocuenta, dinero)){
-                //Quitar dinero
-                this.controller.moverSaldo(numerocuenta, -dinero, "Transacción a " + this.controller.getNombre(destinatario));
-                //Dar dinero
-                this.controller.moverSaldo(destinatario, dinero, "Transacción de " + this.controller.getNombre(numerocuenta));
-                this.setVisible(false);
-                jTextField5.setText(null);
-                jTextField6.setText(null);
-                cajero.activarOtraOperacion();
-            }
+            if(numerocuenta != destinatario){
+                if (this.controller.haySaldo(numerocuenta, dinero)){
+                    //Quitar dinero
+                    this.controller.moverSaldo(numerocuenta, -dinero, "Transacción a " + this.controller.getNombre(destinatario));
+                    //Dar dinero
+                    this.controller.moverSaldo(destinatario, dinero, "Transacción de " + this.controller.getNombre(numerocuenta));
+                    this.setVisible(false);
+                    jTextField5.setText(null);
+                    jTextField6.setText(null);
+                    cajero.activarOtraOperacion();
+                }
+            } else JOptionPane.showMessageDialog(this, "No puede hacerse una transacción a su propia cuenta");
         } else JOptionPane.showMessageDialog(this, "El destinatario no existe.");
     }//GEN-LAST:event_jButton1MousePressed
 
