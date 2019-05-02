@@ -45,6 +45,9 @@ public class Transacciones extends javax.swing.JPanel {
         jButton1.setFont(Consolas20);
         jButton1.setText("ACEPTAR");
         
+        jButton3.setFont(Consolas20);
+        jButton3.setText("SALIR");
+        
         jComboBox1.setFont(Consolas20);
         jComboBox1.addItem("PRÉSTAMO");
         jComboBox1.addItem("REGALO");
@@ -85,7 +88,11 @@ public class Transacciones extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jPanel14 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
         jPanel32 = new javax.swing.JPanel();
 
         setLayout(new java.awt.GridLayout(3, 1));
@@ -147,17 +154,32 @@ public class Transacciones extends javax.swing.JPanel {
         jPanel17.setLayout(new java.awt.GridLayout(3, 1));
         jPanel3.add(jPanel17);
 
+        jPanel21.setLayout(new java.awt.GridLayout(1, 3));
+        jPanel21.add(jPanel10);
+
         jButton1.setText("jButton1");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton1MousePressed(evt);
             }
         });
-        jPanel21.add(jButton1);
+        jPanel13.add(jButton1);
+
+        jPanel21.add(jPanel13);
+
+        jButton3.setText("jButton1");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jPanel14.add(jButton3);
+
+        jPanel21.add(jPanel14);
 
         jPanel3.add(jPanel21);
 
-        jPanel32.setLayout(new java.awt.GridLayout(1, 0));
+        jPanel32.setLayout(new java.awt.GridLayout(1, 3));
         jPanel3.add(jPanel32);
 
         add(jPanel3);
@@ -189,17 +211,26 @@ public class Transacciones extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        this.setVisible(false);
+        cajero.activarMenuPrincipal();
+    }//GEN-LAST:event_jButton3MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;

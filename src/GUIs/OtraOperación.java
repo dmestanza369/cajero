@@ -34,7 +34,7 @@ public class OtraOperación extends javax.swing.JPanel {
         Font Consolas24 = new java.awt.Font("Consolas", 0, 24);
         
         jLabel1.setFont(Consolas24);
-        jLabel1.setText("¿DESEA REALIZAR OTRA OPERACION?");
+        jLabel1.setText("¿DESEA REALIZAR OTRA OPERACIÓN?");
         
         jButton1.setFont(Consolas20);
         jButton1.setText("SÍ");
