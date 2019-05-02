@@ -18,13 +18,13 @@ public class Database {
 
     public Database() {
         //Añadir cuentas
-        this.añadirCuenta(00000001, "Álvaro Río López", 1111, 459.32);
-        this.añadirCuenta(00000002, "David Mestanza Rubia", 2222, 48.25);
-        this.añadirCuenta(00000003, "Alberto Jiménez Gómez", 3333, 0.01);
-        this.añadirCuenta(00000004, "Carlota Menéndez del Campo", 4444, 150.58);
-        this.añadirCuenta(00000005, "Azahara Andújar Muñoz-Quirós", 5555, 333.33);
-        this.añadirCuenta(00000006, "Enrique Márquez Jiménez", 6666, 234.21);
-        this.añadirCuenta(00000007, "Manuel Martín Aláez", 7777, 300.10);
+        this.añadirCuenta(00000001, "ÁLVARO RÍO LÓPEZ", 1111, 459.32);
+        this.añadirCuenta(00000002, "DAVID MESTANZA RUBIA", 2222, 48.25);
+        this.añadirCuenta(00000003, "ALBERTO JÍMENEZ GÓMEZ", 3333, 0.01);
+        this.añadirCuenta(00000004, "CARLOTA MENÉNDEZ DEL CAMPO", 4444, 150.58);
+        this.añadirCuenta(00000005, "AZAHARA ANDUJAR MUÑOZ-QUIRÓS", 5555, 333.33);
+        this.añadirCuenta(00000006, "ENRIQUE MÁRQUEZ JIMENÉZ", 6666, 234.21);
+        this.añadirCuenta(00000007, "MANUEL MARTÍN ALÁEZ", 7777, 300.10);
     }
     
     public void añadirCuenta(int numerocuenta, String nombre, int PIN, double saldo){

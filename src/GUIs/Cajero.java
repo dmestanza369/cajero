@@ -34,7 +34,7 @@ public class Cajero extends javax.swing.JFrame {
     public Cajero() {
         this.controller = new CajeroController();
         
-        this.setTitle("Cajero"); //Título de la ventana
+        this.setTitle("CAJERO"); //Título de la ventana
         this.setVisible(true);
  
         //Fuentes

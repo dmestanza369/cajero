@@ -92,7 +92,7 @@ public class Movimientos extends javax.swing.JPanel {
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setMinimumSize(new java.awt.Dimension(200, 190));
-        jTextArea1.setPreferredSize(new java.awt.Dimension(200, 190));
+        jTextArea1.setPreferredSize(new java.awt.Dimension(400, 300));
         jScrollPane1.setViewportView(jTextArea1);
 
         jPanel2.add(jScrollPane1, java.awt.BorderLayout.PAGE_END);

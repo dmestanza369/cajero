@@ -193,8 +193,9 @@ public class Transacciones extends javax.swing.JPanel {
             double dinero = Double.parseDouble(jTextField6.getText());
             if(numerocuenta != destinatario){
                 if (this.controller.haySaldo(numerocuenta, dinero)){
+                    String concepto = jComboBox1.getItemAt(jComboBox1.getSelectedIndex());
                     //Quitar dinero
-                    this.controller.moverSaldo(numerocuenta, -dinero, "Transacción a " + this.controller.getNombre(destinatario));
+                    this.controller.moverSaldo(numerocuenta, -dinero, "Transacción a " + this.controller.getNombre(destinatario)+ " ("+concepto+")");
                     //Dar dinero
                     this.controller.moverSaldo(destinatario, dinero, "Transacción de " + this.controller.getNombre(numerocuenta));
                     this.setVisible(false);

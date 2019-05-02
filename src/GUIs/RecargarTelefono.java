@@ -34,17 +34,17 @@ public class RecargarTelefono extends javax.swing.JPanel {
         Font Consolas24 = new java.awt.Font("Consolas", 0, 24);
         
         jLabel5.setFont(Consolas24);
-        jLabel5.setText("RECARGAR TELEFONO");
+        jLabel5.setText("RECARGAR TELÉFONO");
         
         
         jLabel1.setFont(Consolas20);
-        jLabel1.setText("NUMERO DE TELEFONO");
+        jLabel1.setText("NÚMERO DE TELÉFONO");
         
         jLabel2.setFont(Consolas20);
         jLabel2.setText("CANTIDAD");
         
         jLabel3.setFont(Consolas20);
-        jLabel3.setText("NUMERO DE CONFIRMACION");
+        jLabel3.setText("NÚMERO DE CONFIRMACIÓN");
         
         jButton1.setFont(Consolas20);
         jButton1.setText("ACEPTAR");
