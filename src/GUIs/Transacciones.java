@@ -209,6 +209,7 @@ public class Transacciones extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        this.setVisible(false);
         cajero.activarMenuPrincipal();
     }//GEN-LAST:event_jButton3MouseClicked
 

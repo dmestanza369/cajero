@@ -190,6 +190,7 @@ public class Pagos extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2MousePressed
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        this.setVisible(false);
         cajero.activarMenuPrincipal();
     }//GEN-LAST:event_jButton3MouseClicked
 

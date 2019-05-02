@@ -202,6 +202,7 @@ public class CambiarPIN extends javax.swing.JPanel {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        this.setVisible(false);
         cajero.activarMenuPrincipal();
     }//GEN-LAST:event_jButton2MouseClicked
 
