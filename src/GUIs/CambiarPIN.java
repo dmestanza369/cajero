@@ -46,6 +46,9 @@ public class CambiarPIN extends javax.swing.JPanel {
         jButton1.setFont(Consolas20);
         jButton1.setText("ACEPTAR");
         
+        jButton2.setFont(Consolas20);
+        jButton2.setText("SALIR");
+        
         jPasswordField1.setFont(Consolas20);
         jPasswordField2.setFont(Consolas20);
         jPasswordField3.setFont(Consolas20);
@@ -79,7 +82,11 @@ public class CambiarPIN extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
         jPanel32 = new javax.swing.JPanel();
 
         setLayout(new java.awt.GridLayout(3, 1));
@@ -139,13 +146,28 @@ public class CambiarPIN extends javax.swing.JPanel {
         jPanel17.setLayout(new java.awt.GridLayout(3, 1));
         jPanel3.add(jPanel17);
 
+        jPanel21.setLayout(new java.awt.GridLayout());
+        jPanel21.add(jPanel8);
+
         jButton1.setText("jButton1");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton1MousePressed(evt);
             }
         });
-        jPanel21.add(jButton1);
+        jPanel9.add(jButton1);
+
+        jPanel21.add(jPanel9);
+
+        jButton2.setText("jButton1");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jPanel10.add(jButton2);
+
+        jPanel21.add(jPanel10);
 
         jPanel3.add(jPanel21);
 
@@ -179,14 +201,20 @@ public class CambiarPIN extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        cajero.activarMenuPrincipal();
+    }//GEN-LAST:event_jButton2MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
@@ -198,6 +226,8 @@ public class CambiarPIN extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField3;

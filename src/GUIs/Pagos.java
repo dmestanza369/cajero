@@ -43,8 +43,11 @@ public class Pagos extends javax.swing.JPanel {
         jTextField2.setFont(Consolas20);
         jTextField2.setText("");
         
-        jButton1.setFont(Consolas20);
-        jButton1.setText("PAGAR");
+        jButton2.setFont(Consolas20);
+        jButton2.setText("PAGAR");
+        
+        jButton3.setFont(Consolas20);
+        jButton3.setText("SALIR");
         
         jComboBox1.setFont(Consolas20);
         jComboBox1.addItem("IMPUESTOS");
@@ -82,7 +85,11 @@ public class Pagos extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jPanel12 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
         jPanel32 = new javax.swing.JPanel();
 
         setLayout(new java.awt.GridLayout(3, 1));
@@ -135,13 +142,28 @@ public class Pagos extends javax.swing.JPanel {
         jPanel17.setLayout(new java.awt.GridLayout(3, 1));
         jPanel3.add(jPanel17);
 
-        jButton1.setText("jButton1");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanel21.setLayout(new java.awt.GridLayout(1, 3));
+        jPanel21.add(jPanel8);
+
+        jButton2.setText("jButton1");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jButton1MousePressed(evt);
+                jButton2MousePressed(evt);
             }
         });
-        jPanel21.add(jButton1);
+        jPanel10.add(jButton2);
+
+        jPanel21.add(jPanel10);
+
+        jButton3.setText("jButton1");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jPanel12.add(jButton3);
+
+        jPanel21.add(jPanel12);
 
         jPanel3.add(jPanel21);
 
@@ -151,28 +173,10 @@ public class Pagos extends javax.swing.JPanel {
         add(jPanel3);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
-       int opcion = jComboBox1.getSelectedIndex();
-       String concepto="";
-       switch (opcion) {
-            case 0:
-            concepto="IMPUESTOS";
-            break;
-            case 1:
-            concepto="LUZ";
-            break;
-            case 2:
-            concepto="AGUA";
-            break;
-            case 3:
-            concepto="GAS";
-            break;
-            case 4:
-            concepto="MULTA";
-            break;
-       }
+    private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
         double pagar = -Double.parseDouble(jTextField2.getText());
         Integer pago = Integer.parseInt(jTextField2.getText());
+        String concepto = jComboBox1.getItemAt(jComboBox1.getSelectedIndex());
         if (pago<1){
             JOptionPane.showMessageDialog(this, "Error: Imposible realizar un pago de "+pago+" euros" );
         }else {
@@ -183,18 +187,24 @@ public class Pagos extends javax.swing.JPanel {
             cajero.activarOtraOperacion();           
         }  else JOptionPane.showMessageDialog(this, "ERROR: SALDO INSUFICIENTE");
     }
-        
-    }//GEN-LAST:event_jButton1MousePressed
+    }//GEN-LAST:event_jButton2MousePressed
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        cajero.activarMenuPrincipal();
+    }//GEN-LAST:event_jButton3MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
@@ -205,6 +215,7 @@ public class Pagos extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables

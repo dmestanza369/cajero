@@ -52,6 +52,9 @@ public class RecargarTelefono extends javax.swing.JPanel {
         jButton2.setFont(Consolas20);
         jButton2.setText("CONFIRMAR");
         
+        jButton3.setFont(Consolas20);
+        jButton3.setText("SALIR");
+        
         jTextField1.setFont(Consolas20);
         jTextField1.setText("");
         
@@ -84,7 +87,11 @@ public class RecargarTelefono extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
@@ -122,13 +129,28 @@ public class RecargarTelefono extends javax.swing.JPanel {
 
         add(jPanel3);
 
+        jPanel4.setLayout(new java.awt.GridLayout());
+        jPanel4.add(jPanel6);
+
         jButton1.setText("jButton1");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton1MousePressed(evt);
             }
         });
-        jPanel4.add(jButton1);
+        jPanel7.add(jButton1);
+
+        jPanel4.add(jPanel7);
+
+        jButton3.setText("jButton1");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jPanel8.add(jButton3);
+
+        jPanel4.add(jPanel8);
 
         add(jPanel4);
 
@@ -197,10 +219,15 @@ public class RecargarTelefono extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        cajero.activarMenuPrincipal();
+    }//GEN-LAST:event_jButton3MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -210,6 +237,9 @@ public class RecargarTelefono extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
