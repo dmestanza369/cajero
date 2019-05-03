@@ -61,9 +61,9 @@ public class Transacciones extends javax.swing.JPanel {
     }
 
     private boolean ComprobarCampos(){
-        if ("".equals(jTextField5.getText())) return false;
-        if ("".equals(jTextField6.getText())) return false;
-        return true;
+        if (jTextField5.getText().length()!=0) return true;
+        if (jTextField6.getText().length()!=0) return true;
+        return false;
     }
     
     @SuppressWarnings("unchecked")
@@ -181,8 +181,9 @@ public class Transacciones extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
-        int destinatario = Integer.parseInt(jTextField5.getText());
+        int destinatario = -1;       
         if (ComprobarCampos()){
+            destinatario = Integer.parseInt(jTextField5.getText());
             if (this.controller.existeCuenta(destinatario)){
                 double dinero = Double.parseDouble(jTextField6.getText());
                 if (this.controller.haySaldo(numerocuenta, dinero)){
