@@ -54,6 +54,13 @@ public class CambiarPIN extends javax.swing.JPanel {
         jPasswordField3.setFont(Consolas20);
     
     }
+    
+    private boolean ComprobarCampos(){
+        if (jPasswordField1.getText().length()!=0) return true;
+        if (jPasswordField2.getText().length()!=0) return true;
+        if (jPasswordField3.getText().length()!=0) return true;
+        return false;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -168,20 +175,22 @@ public class CambiarPIN extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
-        int contraseña1 = Integer.parseInt(String.valueOf(jPasswordField1.getPassword()));
-        int contraseña2 = Integer.parseInt(String.valueOf(jPasswordField2.getPassword()));
-        int contraseña3 = Integer.parseInt(String.valueOf(jPasswordField3.getPassword()));
-        if(this.controller.getPin(numeroCuenta) == contraseña1){
-            if(contraseña3 == contraseña2){
-                if(this.controller.isPINUnique(contraseña3)){
-                    if(Integer.toString(contraseña2).length() == 4 && Integer.toString(contraseña3).length() == 4){
-                        this.controller.setPin(numeroCuenta, contraseña3);            
-                        this.setVisible(false);
-                        cajero.activarOtraOperacion();
-                    } else JOptionPane.showMessageDialog(this, "ERROR: El nuevo PIN no tiene 4 dígitos.");
-                } else JOptionPane.showMessageDialog(this, "ERROR: Este PIN ya existe o es el mismo.");
-            } else JOptionPane.showMessageDialog(this, "ERROR: Los campos no coinciden.");
-        } else JOptionPane.showMessageDialog(this, "ERROR: PIN incorrecto.");
+        if (ComprobarCampos()){
+            int contraseña1 = Integer.parseInt(String.valueOf(jPasswordField1.getPassword()));
+            int contraseña2 = Integer.parseInt(String.valueOf(jPasswordField2.getPassword()));
+            int contraseña3 = Integer.parseInt(String.valueOf(jPasswordField3.getPassword()));
+            if(this.controller.getPin(numeroCuenta) == contraseña1){
+                if(contraseña3 == contraseña2){
+                    if(this.controller.isPINUnique(contraseña3)){
+                        if(Integer.toString(contraseña2).length() == 4 && Integer.toString(contraseña3).length() == 4){
+                            this.controller.setPin(numeroCuenta, contraseña3);            
+                            this.setVisible(false);
+                            cajero.activarOtraOperacion();
+                        } else JOptionPane.showMessageDialog(this, "ERROR: El nuevo PIN no tiene 4 dígitos.");
+                    } else JOptionPane.showMessageDialog(this, "ERROR: Este PIN ya existe o es el mismo.");
+                } else JOptionPane.showMessageDialog(this, "ERROR: Los campos no coinciden.");
+            } else JOptionPane.showMessageDialog(this, "ERROR: PIN incorrecto.");
+        } else JOptionPane.showMessageDialog(this, "ERROR: Hay campos vacíos.");
         
         jPasswordField1.setText("");
         jPasswordField2.setText("");
