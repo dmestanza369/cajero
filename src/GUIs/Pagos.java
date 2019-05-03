@@ -166,18 +166,13 @@ public class Pagos extends javax.swing.JPanel {
         add(jPanel3);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
-        //BORRAR
-    }//GEN-LAST:event_jButton1MousePressed
     private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
         double pagar = -1;
         String concepto = jComboBox1.getItemAt(jComboBox1.getSelectedIndex());
         if (jTextField2.getText().length()!=0){
             pagar=-Double.parseDouble(jTextField2.getText());
-            if (pagar>0){
-                JOptionPane.showMessageDialog(this, "ERROR: Imposible realizar un pago negativo." );
-            } else {
-                
+            if (pagar>0) JOptionPane.showMessageDialog(this, "ERROR: Imposible realizar un pago negativo.");
+            else {
                 if(this.controller.haySaldo(numeroCuenta, -pagar)){
                     controller.moverSaldo(numeroCuenta, pagar,concepto);
                     this.setVisible(false);
