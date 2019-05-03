@@ -1,7 +1,8 @@
 # README
 
 <h1 align="center">Inicio de programa</h1>
-<p>El programa se inicia ejecutando el archivo cajero.jar. Para ello es necesario tener Java instalado en el equipo. En caso de que no lo tenga, <a href="https://www.java.com/es/download/win10.jsp"> puede descargarlo aquí. </a></p>
+<p>El programa se inicia ejecutando el archivo cajero.jar.<br>
+  Para ello es necesario tener Java instalado en el equipo. En caso de que no lo tenga, <a href="https://www.java.com/es/download/win10.jsp"> puede descargarlo aquí. </a></p>
 
 <h1 align="center">Cuentas</h1>
 <table class="egt">
