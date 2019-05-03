@@ -174,7 +174,7 @@ public class CambiarPIN extends javax.swing.JPanel {
         if(this.controller.getPin(numeroCuenta) == contraseña1){
             if(contraseña3 == contraseña2){
                 if(this.controller.isPINUnique(contraseña3)){
-                    if(contraseña2 == 4 && contraseña3 == 4){
+                    if(Integer.toString(contraseña2).length() == 4 && Integer.toString(contraseña3).length() == 4){
                         this.controller.setPin(numeroCuenta, contraseña3);            
                         this.setVisible(false);
                         cajero.activarOtraOperacion();
