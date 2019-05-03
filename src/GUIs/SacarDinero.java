@@ -131,7 +131,7 @@ public class SacarDinero extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         double sacar = 0;
-        if(jTextField1.getText() != ""){
+        if(jTextField1.getText().length()!=0){
             sacar = -Double.parseDouble(jTextField1.getText());
             int OK;
             if (sacar >= 0){

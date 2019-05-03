@@ -133,7 +133,7 @@ public class IngresarDinero extends javax.swing.JPanel {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         double ingresar = -1;
-        if(jTextField1.getText() != ""){
+        if(jTextField1.getText().length()!=0){
             ingresar = Double.parseDouble(jTextField1.getText());
             if(ingresar > 0){
                 this.controller.moverSaldo(numeroCuenta, ingresar,"INGRESO");
