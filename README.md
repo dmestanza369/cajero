@@ -1,10 +1,54 @@
 # README
+<p> El proyecto consiste en un cajero automático que realiza varias acciones, como ingresar dinero o realizar pagos.</p>
 
-<h1 align="center">Inicio de programa</h1>
+<h1 align="left">Integrantes de grupo</h1>
+<table class="egt">
+  <tr>
+    <th>Apellidos, Nombre</th>
+    <th>Correo electrónico</th>
+    <th>Usuario de GitHub</th>
+  </tr>
+  <tr>
+    <td>Andújar Muñoz-Quirós, Azahara</td>
+    <td><a href="mailto: a.andujar.2017@alumnos.urjc.es"> a.andujar.2017@alumnos.urjc.es </a></td>
+    <td><a href="https://github.com/azzzahara"> azzzahara </a></td>
+  </tr>
+  <tr>
+    <td>Jiménez Gómez, Alberto</td>
+    <td><a href="mailto: a.jimenez.2017@alumnos.urjc.es"> a.jimenez.2017@alumnos.urjc.es </a></td>
+    <td><a href="https://github.com/kaydas"> kaydas </a></td></td>
+  </tr>
+  <tr>
+    <td>Márquez Jiménez, Enrique</td>
+    <td><a href="mailto: e.marquez.2017@alumnos.urjc.es"> e.marquez.2017@alumnos.urjc.es </a></td>
+    <td><a href="https://github.com/Kikemaji"> Kikemaji </a></td></td>
+  </tr>
+    <tr>
+    <td>Martín Aláez, Manuel</td>
+    <td><a href="mailto: m.martinal.2017@alumnos.urjc.es"> m.martinal.2017@alumnos.urjc.es </a></td>
+    <td><a href="https://github.com/mmartinal"> mmartinal </a></td></td>
+  </tr>
+  <tr>
+    <td>Menéndez del Campo, Carlota</td>
+    <td><a href="mailto: c.menendez.2017@alumnos.urjc.es"> c.menendez.2017@alumnos.urjc.es </a></td>
+    <td><a href="https://github.com/CarlotaMenendez"> CarlotaMenendez </a></td></td>
+  </tr>
+  <tr>
+    <td>Mestanza Rubia, David</td>
+    <td><a href="mailto: d.mestanza.2017@alumnos.urjc.es"> d.mestanza.2017@alumnos.urjc.es </a></td>
+    <td><a href="https://github.com/dmestanza369"> dmestanza369 </a></td></td>
+  </tr>
+  <tr>
+    <td>Río López, Álvaro</td>
+    <td><a href="mailto: a.rio.2017@alumnos.urjc.es"> a.rio.2017@alumnos.urjc.es </a></td>
+    <td><a href="https://github.com/AlvaroRio"> AlvaroRio </a></td></td>
+  </tr>
+</table>
+<h1 align="left">Inicio de programa</h1>
 <p>El programa se inicia ejecutando el archivo cajero.jar.<br>
   Para ello es necesario tener Java instalado en el equipo. En caso de que no lo tenga, <a href="https://www.java.com/es/download/win10.jsp"> puede descargarlo aquí. </a></p>
 
-<h1 align="center">Cuentas</h1>
+<h1 align="left">Cuentas</h1>
 <table class="egt">
   <tr>
     <th>Número de cuenta</th>
