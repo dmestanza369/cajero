@@ -67,10 +67,9 @@ public class RecargarTelefono extends javax.swing.JPanel {
     }
     
     private boolean ComprobarCampos(){
-        if ("".equals(jTextField1.getText())) return false;
-        if ("".equals(jTextField2.getText())) return false;
-        if ("".equals(jTextField3.getText())) return false;
-        return true;
+        if (jTextField1.getText().length()!=0) return true;
+        if (jTextField2.getText().length()!=0) return true;
+        return false;
     }
 
     @SuppressWarnings("unchecked")
@@ -178,12 +177,14 @@ public class RecargarTelefono extends javax.swing.JPanel {
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         int cuenta = 0;
         cuenta = this.numerocuenta;
-        int numerotelefono = Integer.parseInt(jTextField1.getText()); 
-        int numeros = Integer.toString(numerotelefono).length();
-        int sacar = Integer.parseInt(jTextField2.getText());
-        boolean hayDinero = this.controller.haySaldo(cuenta, sacar);
+        int numerotelefono = 0;
+        int numeros = 0;
+        int sacar = 0;
         if (ComprobarCampos()){
-            if (hayDinero == false){
+            numerotelefono = Integer.parseInt(jTextField1.getText());
+            numeros = Integer.toString(numerotelefono).length();
+            sacar = Integer.parseInt(jTextField2.getText());
+            if (!this.controller.haySaldo(cuenta, sacar)){
                 JOptionPane.showMessageDialog(this, "ERROR: Saldo insuficiente.");   
             }else{
                 if(numeros == 9 && numerotelefono >= 600000000 && numerotelefono <= 799999999){
@@ -195,17 +196,17 @@ public class RecargarTelefono extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1MousePressed
 
     private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
-        int numerotelefono = Integer.parseInt(jTextField1.getText()); 
-        int numeroconfirmacionescrito = Integer.parseInt(jTextField3.getText());
-        int cantidad = -Integer.parseInt(jTextField2.getText());
+        int numerotelefono = 0;
+        int numeroconfirmacionescrito = 0;
+        double cantidad = 0;
         if (ComprobarCampos()){
+            numerotelefono = Integer.parseInt(jTextField1.getText()); 
+            numeroconfirmacionescrito = Integer.parseInt(jTextField3.getText());
+            cantidad = -Double.parseDouble(jTextField2.getText());
             if(numeroconfirmacion == numeroconfirmacionescrito){
                 if(this.controller.haySaldo(numerocuenta, -cantidad)){
                     this.controller.moverSaldo(numerocuenta, cantidad, "RECARGA A " + numerotelefono);
                     this.setVisible(false);
-                    jTextField1.setText(null);
-                    jTextField2.setText(null);
-                    jTextField3.setText(null);
                     cajero.activarOtraOperacion();
                 }
             } else JOptionPane.showMessageDialog(this, "ERROR: El número de confirmación no es correcto.");
