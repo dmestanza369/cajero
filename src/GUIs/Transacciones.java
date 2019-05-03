@@ -120,11 +120,6 @@ public class Transacciones extends javax.swing.JPanel {
         jTextField5.setMinimumSize(new java.awt.Dimension(200, 50));
         jTextField5.setName(""); // NOI18N
         jTextField5.setPreferredSize(new java.awt.Dimension(200, 50));
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
         jPanel11.add(jTextField5);
 
         jPanel2.add(jPanel11);
@@ -207,13 +202,12 @@ public class Transacciones extends javax.swing.JPanel {
         jTextField6.setText("");
     }//GEN-LAST:event_jButton1MousePressed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         this.setVisible(false);
         cajero.activarMenuPrincipal();
+        
+        jTextField5.setText("");
+        jTextField6.setText("");
     }//GEN-LAST:event_jButton3MouseClicked
 
 

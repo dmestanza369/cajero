@@ -50,10 +50,10 @@ public class Pagos extends javax.swing.JPanel {
         jButton3.setText("SALIR");
         
         jComboBox1.setFont(Consolas20);
-        jComboBox1.addItem("IMPUESTOS");
-        jComboBox1.addItem("LUZ");
         jComboBox1.addItem("AGUA");
         jComboBox1.addItem("GAS");
+        jComboBox1.addItem("IMPUESTOS");
+        jComboBox1.addItem("LUZ");
         jComboBox1.addItem("MULTA");
     }
 
@@ -185,12 +185,15 @@ public class Pagos extends javax.swing.JPanel {
                 } else JOptionPane.showMessageDialog(this, "ERROR: Saldo insuficiente.");
             }
         } else JOptionPane.showMessageDialog(this, "ERROR: Hay campos vacíos.");
+        
         jTextField2.setText("");
     }//GEN-LAST:event_jButton2MousePressed
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         this.setVisible(false);
         cajero.activarMenuPrincipal();
+        
+        jTextField2.setText("");
     }//GEN-LAST:event_jButton3MouseClicked
 
 

@@ -135,7 +135,7 @@ public class SacarDinero extends javax.swing.JPanel {
             sacar = -Double.parseDouble(jTextField1.getText());
             int OK;
             if (sacar >= 0){
-                JOptionPane.showMessageDialog(this, "ERROR: Imposible sacar " + (-sacar) + " €." );
+                JOptionPane.showMessageDialog(this, "ERROR: No se puede sacar un número negativo." );
             }else{
                 if (this.controller.haySaldo(numeroCuenta, -sacar)){
                     OK = this.controller.moverSaldo(numeroCuenta, sacar, "RETIRADA EN EFECTIVO");//el this puede que sobre
@@ -154,6 +154,8 @@ public class SacarDinero extends javax.swing.JPanel {
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         this.setVisible(false);
         cajero.activarMenuPrincipal();
+        
+        jTextField1.setText("");
     }//GEN-LAST:event_jButton2MouseClicked
 
 

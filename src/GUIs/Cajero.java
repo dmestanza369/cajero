@@ -133,12 +133,10 @@ public class Cajero extends javax.swing.JFrame {
                 this.jPanel3.setVisible(false);
                 this.jPanel4.setVisible(false);
                 menuprincipal.setVisible(true);
-            } else JOptionPane.showMessageDialog(this, "ERROR: PIN inexistente o no es un número");
-            
-        } else {
-            JOptionPane.showMessageDialog(this, "ERROR: La longitud del PIN es 4.");
-            jPasswordField1.setText("");
-        }  
+            } else JOptionPane.showMessageDialog(this, "ERROR: PIN inexistente o no es un número");            
+        } else JOptionPane.showMessageDialog(this, "ERROR: La longitud del PIN es 4.");
+        
+        jPasswordField1.setText("");
     }//GEN-LAST:event_jButton1MousePressed
 
     private void setPanels() {
