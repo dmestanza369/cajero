@@ -1,7 +1,7 @@
-# README
+<h1 align="left">README</h1>
 <p> El proyecto consiste en un cajero automático que realiza varias acciones, como ingresar dinero o realizar pagos.</p>
 
-<h1 align="left">Integrantes de grupo</h1>
+<h2 align="left">Integrantes de grupo</h2>
 <table class="egt">
   <tr>
     <th>Apellidos, Nombre</th>
@@ -44,11 +44,12 @@
     <td><a href="https://github.com/AlvaroRio"> AlvaroRio </a></td></td>
   </tr>
 </table>
-<h1 align="left">Inicio de programa</h1>
+
+<h2 align="left">Inicio de programa</h2>
 <p>El programa se inicia ejecutando el archivo cajero.jar.<br>
   Para ello es necesario tener Java instalado en el equipo. En caso de que no lo tenga, <a href="https://www.java.com/es/download/win10.jsp"> puede descargarlo aquí. </a></p>
 
-<h1 align="left">Cuentas</h1>
+<h2 align="left">Cuentas</h2>
 <table class="egt">
   <tr>
     <th>Número de cuenta</th>
