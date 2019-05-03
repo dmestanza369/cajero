@@ -20,7 +20,7 @@ public class Database {
         //Añadir cuentas
         this.añadirCuenta(00000001, "ÁLVARO RÍO LÓPEZ", 1111, 459.32);
         this.añadirCuenta(00000002, "DAVID MESTANZA RUBIA", 2222, 48.25);
-        this.añadirCuenta(00000003, "ALBERTO JÍMENEZ GÓMEZ", 3333, 435000.06);
+        this.añadirCuenta(00000003, "ALBERTO JÍMENEZ GÓMEZ", 3333, 0.01);
         this.añadirCuenta(00000004, "CARLOTA MENÉNDEZ DEL CAMPO", 4444, 150.58);
         this.añadirCuenta(00000005, "AZAHARA ANDUJAR MUÑOZ-QUIRÓS", 5555, 333.33);
         this.añadirCuenta(00000006, "ENRIQUE MÁRQUEZ JIMENÉZ", 6666, 234.21);
