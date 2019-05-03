@@ -1,4 +1,4 @@
-<h1 align="left">README</h1>
+<h1 align="left">README − cajero</h1>
 <p> El proyecto consiste en un cajero automático que realiza varias acciones, como ingresar dinero o realizar pagos.</p>
 
 <h2 align="left">Integrantes de grupo</h2>
